@@ -11,15 +11,14 @@ import com.dbellart.web.service.UserService;
 @Controller
 public class UserController {
 	
-    private UserRepository userRepository;
-    private UserService userService;
-
-    @PostMapping("/joinpPro") //회원가입
-    public String joinpPro(User user) {
-        userService.addUserinfo(user);
-
-        return "user/login";
-    }
+	/*
+	 * private UserRepository userRepository; private UserService userService;
+	 * 
+	 * @PostMapping("/joinpPro") //회원가입 public String joinpPro(User user) {
+	 * userService.addUserinfo(user);
+	 * 
+	 * return "user/login"; }
+	 */
 }
 
 
