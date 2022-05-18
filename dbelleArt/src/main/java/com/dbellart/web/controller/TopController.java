@@ -41,6 +41,11 @@ public class TopController {
 		
 		return "top/notice";
 	}
+	@RequestMapping("write")
+	public String write() {
+		
+		return "top/write";
+	}
 	
 	@RequestMapping("contact")
 	public String contact() {
