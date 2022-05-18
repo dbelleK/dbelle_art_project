@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+	
 	<aside class="aside">
 		<div class="container-xxl bg-primary page-header">
 			<div class="container text-center">
