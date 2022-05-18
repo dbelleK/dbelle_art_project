@@ -56,9 +56,4 @@ public class User {
 		this.checkAll = checkAll;
 	}
 	
-	
-	
-	
-	
-
 }
