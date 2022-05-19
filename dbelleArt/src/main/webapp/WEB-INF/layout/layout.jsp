@@ -17,7 +17,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -36,9 +36,12 @@
 
 <body>
 
-    <t:insertAttribute name="header" />
-    <t:insertAttribute name="body" />
-    <t:insertAttribute name="footer" />
+    <div>
+        <t:insertAttribute name="header" />
+
+        <t:insertAttribute name="body" />
+        <t:insertAttribute name="footer" />
+    </div>
 
 	<div>
         <!-- Back to Top -->
