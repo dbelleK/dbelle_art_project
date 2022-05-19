@@ -14,19 +14,17 @@ public class UserController {
 	  @Autowired
 	  private UserService userService;
 	  
-	  //회원가입 
-	  @PostMapping("/joinpPro") 
+	  @PostMapping("/joinpPro")
 	  public String joinpPro(User user) {
 		  	
-		  	userService.addUserinfo(user); //여기다 디버그 싫행 : 서비스라인 들어가기 직전에 포인트가 걸린다
+		  	userService.addUserinfo(user);
 		  	userService.joinUserInfo(user);
 		  	
 	  		return "top/login"; 
 	  
 	  }
 	  
-	 //로그인
-	 @PostMapping("/loginPro") 
+	 @PostMapping("/loginPro")
 	 public String loginPro(User user) {
 		 userService.loginUserInfo(user);
 		 return "/";
