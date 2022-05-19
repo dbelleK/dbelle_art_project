@@ -9,18 +9,18 @@
 	<insert id="addUserinfo" parameterType="User" useGeneratedKeys="true"  keyProperty="idx">
 		insert into USER (name, email, pw, pwCheck, tel, address, checkAll)
 		values (#{name}, #{email}, #{pw}, #{pwCheck}, #{tel}, #{address} , #{checkAll})
-	</insert>'
-	
+	</insert>
+
 	<!-- 2.회원가입 이메일 중복확인  -->
 	<!-- 같은 이메일이 있으면 가입안되게 하기 -->
 	<select id="joinUserInfo" parameterType="String" resultType="User">
 		select * from USER where email=#{email}
 	</select>
-	
+
 	<!-- 3.로그인하기 -->
 	<!-- email과 pw가 같으면 로그인 -->
 	<select id="loginUserInfo" parameterType="User" resultType="User">
 		select * from USER where email=#{email} and pw=#{pw}
 	</select>
-	
+
 </mapper>
