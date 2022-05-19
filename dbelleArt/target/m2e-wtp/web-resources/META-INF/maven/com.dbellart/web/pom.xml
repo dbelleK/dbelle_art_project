@@ -21,7 +21,7 @@
                <url>http://maven.jahia.org/maven2</url>
           </repository>
     </repositories>
-    
+    sdfsdf
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
