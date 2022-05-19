@@ -17,7 +17,7 @@ public class UserController {
 	  @PostMapping("/joinpPro") //회원가입 
 	  public String joinpPro(User user) {
 		  	
-		  	userService.addUserinfo(user);
+		  	userService.addUserinfo(user); //여기다 디버그 싫행 : 서비스라인 들어가기 직전에 포인트가 걸린다
 	  		return "top/login"; 
 	  
 	  }

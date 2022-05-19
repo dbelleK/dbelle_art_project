@@ -20,7 +20,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" name="id" placeholder="Your Email">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                    	<input type="text" class="form-control" id="address" name="adress" placeholder="address">
+                                    	<input type="text" class="form-control" id="address" name="address" placeholder="address">
                                         <label for="address">Your address</label>
                                     </div>
                                 </div>
