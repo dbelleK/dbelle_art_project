@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.dbellart.web.domain.User;
-import com.dbellart.web.repository.UserRepository;
 import com.dbellart.web.service.UserService;
 
 @Controller
