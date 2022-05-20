@@ -20,17 +20,17 @@
 //    public BasicDataSource mainDataSource() {
 //        BasicDataSource basicDataSource = new BasicDataSource();
 //        basicDataSource.setDriverClassName("oracle.jdbc.OracleDriver");
-////        basicDataSource.setUrl("jdbc:oracle:thin:@localhost:1521:orcl");
-////        basicDataSource.setUsername("id");
-////        basicDataSource.setPassword("password");
+//        basicDataSource.setUrl("jdbc:oracle:thin:@localhost:1521:orcl");
+//        basicDataSource.setUsername("id");
+//        basicDataSource.setPassword("password");
 //
 //
-////        basicDataSource.setInitialSize(10);
-////        basicDataSource.setMaxActive(30);
-////        basicDataSource.setMaxIdle(30);
-////        basicDataSource.setMinIdle(10);
-////        basicDataSource.setTestWhileIdle(true);
-////        basicDataSource.setValidationQuery("SELECT 1");
+//        basicDataSource.setInitialSize(10);
+//        basicDataSource.setMaxActive(30);
+//        basicDataSource.setMaxIdle(30);
+//        basicDataSource.setMinIdle(10);
+//        basicDataSource.setTestWhileIdle(true);
+//        basicDataSource.setValidationQuery("SELECT 1");
 //
 //        return basicDataSource;
 //    }

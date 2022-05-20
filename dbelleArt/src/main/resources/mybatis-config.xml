@@ -21,10 +21,10 @@
 		<setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>
 		<setting name="logImpl" value="SLF4J"/>
 	</settings>
-<!--	<typeAliases>-->
-<!--		<typeAlias type="com.dbellart.web.common.EncryptTypeHandler" alias="encryptTypeHandler"></typeAlias>-->
-<!--	</typeAliases>-->
-<!--	<typeHandlers>-->
-<!--		<typeHandler handler="com.dbellart.web.common.EncryptTypeHandler" />-->
-<!--	</typeHandlers>-->
+<!-- 	<typeAliases>
+		<typeAlias type="com.dbellart.web.common.EncryptTypeHandler" alias="encryptTypeHandler"></typeAlias>
+	</typeAliases>
+	<typeHandlers>
+		<typeHandler handler="com.dbellart.web.common.EncryptTypeHandler" />
+	</typeHandlers> -->
 </configuration>
