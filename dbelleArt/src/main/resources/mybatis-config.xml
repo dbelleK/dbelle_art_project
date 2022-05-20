@@ -26,5 +26,9 @@
 	</typeAliases>
 	<typeHandlers>
 		<typeHandler handler="com.dbellart.web.common.EncryptTypeHandler" />
-	</typeHandlers> -->
+	</typeHandlers>  -->
+	
+<!-- 	<typeAliases>
+		<typeAlias alias="User" type="com.dbellart.web.domain.User" />
+	</typeAliases>  -->
 </configuration>

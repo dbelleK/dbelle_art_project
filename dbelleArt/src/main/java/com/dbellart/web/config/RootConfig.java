@@ -1,5 +1,7 @@
 package com.dbellart.web.config;
 
+import org.springframework.context.annotation.Configuration;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.context.annotation.ComponentScan.Filter;
@@ -15,3 +17,4 @@ public class RootConfig {
     @Autowired
     private Environment env;
 }
+

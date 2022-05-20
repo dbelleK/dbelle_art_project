@@ -1,27 +1,27 @@
-//package com.dbellart.web.service;
-//
-//import javax.inject.Inject;
-//
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Service;
-//import com.dbellart.web.domain.User;
-////import com.dbellart.web.repository.UserRepository;
+package com.dbellart.web.service;
+
+import javax.inject.Inject;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.dbellart.web.domain.User;
 //import com.dbellart.web.repository.UserRepository;
-//
-//
-//@Service
-//public class UserService {
-//
-//	@Autowired
-//	private UserRepository userRepository;
-//
-//	//1. ??????? insert
-//	public void addUserinfo(User user) {
-//		userRepository.addUserinfo(user);
-//	}
-//
-//	// 2.??????? ????? ??????
-//	// ???? ??????? ?????? ??????? ???
+import com.dbellart.web.repository.UserMapper;
+
+
+@Service
+public class UserService {
+
+	@Autowired
+	private UserMapper userRepository;
+
+	//1. ??????? insert
+	public void addUserinfo(User user) {
+		userRepository.addUserinfo(user);
+	}
+
+	// 2.??????? ????? ??????
+	// ???? ??????? ?????? ??????? ???
 //	public boolean joinUserInfo(User user) {
 //
 //		User userEmail = userRepository.joinUserInfo(user.getEmail());
@@ -31,10 +31,10 @@
 //		}
 //		return false;
 //	}
-//
-//
-//	//3.????????
-//	//email?? pw?? ?????? ?????
+
+
+	//3.????????
+	//email?? pw?? ?????? ?????
 //	public boolean loginUserInfo(User user) {
 //
 //		User loginSuccess=userRepository.loginUserInfo(user);
@@ -45,4 +45,4 @@
 //		}
 //		return false;
 //	}
-//}
+}
