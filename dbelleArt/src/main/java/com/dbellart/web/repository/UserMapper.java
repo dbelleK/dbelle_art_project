@@ -34,10 +34,10 @@ import com.dbellart.web.domain.User;
 		void addUserinfo(User user);
 		
 //		@Select("select * from USER where email=#{email}")
-		User joinUserInfo(String email);
+//		User joinUserInfo(String email);
 		
 //		@Select("select * from USER where email=#{email} and pw=#{pw}")
-		User loginUserInfo(User user);
+//		User loginUserInfo(User user);
 
 
 

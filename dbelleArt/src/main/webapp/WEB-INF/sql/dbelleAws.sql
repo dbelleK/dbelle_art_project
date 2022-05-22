@@ -1,4 +1,4 @@
-create table users(
+create table user(
 	userIdx int not null AUTO_INCREMENT,
 	name varchar(10) not null,
 	email varchar(50) not null,
@@ -10,7 +10,4 @@ create table users(
 	PRIMARY KEY (userIdx)
 );
 
-select * from user;
- 
-drop table user;
- 
+select*from user;

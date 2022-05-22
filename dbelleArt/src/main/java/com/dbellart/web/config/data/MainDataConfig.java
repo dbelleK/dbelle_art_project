@@ -16,13 +16,19 @@ import org.springframework.transaction.PlatformTransactionManager;
 @MapperScan(value = "com.dbellart.web.repository", sqlSessionTemplateRef = "mainSqlSessionTemplate")
 public class MainDataConfig extends DataConfig{
 
+    
     @Bean(destroyMethod = "close")
     public BasicDataSource mainDataSource() {
         BasicDataSource basicDataSource = new BasicDataSource();
+		/* basicDataSource.setDriverClassName("com.mysql.jdbc.Driver"); */
         basicDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        basicDataSource.setUrl("jdbc:mysql://localhost:3306/dbelle?serverTimezone=UTC&characterEncoding=UTF-8");
-        basicDataSource.setUsername("root");
+        basicDataSource.setUrl("jdbc:mysql://database-1.c7cg0tjqgayo.ap-northeast-2.rds.amazonaws.com/dbelle");
+        basicDataSource.setUsername("dbelle");
         basicDataSource.setPassword("soc06052");
+//        basicDataSource.setDriverClassName("db.classname");
+//        basicDataSource.setUrl("db.url");
+//        basicDataSource.setUsername("db.username");
+//        basicDataSource.setPassword("db.password");
 
 
         basicDataSource.setInitialSize(10);
