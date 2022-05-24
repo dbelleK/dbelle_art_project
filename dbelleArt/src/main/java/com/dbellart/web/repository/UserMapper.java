@@ -33,11 +33,11 @@ import com.dbellart.web.domain.User;
 		@Options(useGeneratedKeys = true, keyProperty = "userIdx")
 		void addUserinfo(User user);
 		
-		@Select("select * from USER where email=#{email}")
+		@Select("select * from dbelle.user where email=#{email}")
 		User joinUserInfo(String email);
 		
-//		@Select("select * from USER where email=#{email} and pw=#{pw}")
-//		User loginUserInfo(User user);
+		@Select("select * from dbelle.user where email=#{email} and pw=#{pw}")
+		User loginUserInfo(User user);
 
 
 

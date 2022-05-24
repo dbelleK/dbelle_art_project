@@ -13,6 +13,13 @@ public class User {
 	private boolean checkAll;
 	
 	
+	
+	public int getUserIdx() {
+		return userIdx;
+	}
+	public void setUserIdx(int userIdx) {
+		this.userIdx = userIdx;
+	}
 	public String getName() {
 		return name;
 	}
