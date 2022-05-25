@@ -14,6 +14,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import com.dbellart.web.service.UserService;
 
@@ -22,8 +23,7 @@ import javax.servlet.http.HttpSession;
 import java.util.Collection;
 import java.util.List;
 
-@RequiredArgsConstructor
-@Configuration
+@Service
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     //특정 페이지 접속할 수 없게 권한 준다 예를 들어서 마이페이 같은 경우 로그인을 해야만 들어갈 수 있으니까
@@ -40,6 +40,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+    	System.out.println("시큐리티작동");
         String email = (String)authentication.getPrincipal();
         String password = (String)authentication.getCredentials();
         SpringUser springUser;

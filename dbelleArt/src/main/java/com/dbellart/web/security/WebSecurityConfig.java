@@ -6,82 +6,73 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.session.SessionRegistry;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.context.SecurityContextPersistenceFilter;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
-import com.mysql.cj.protocol.AuthenticationProvider;
+//import com.mysql.cj.protocol.AuthenticationProvider;
 
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-//	@Autowired
-//    @Qualifier("customAuthenticationProvider")
-//    private AuthenticationProvider authenticationProvider;
-   
-	 @Autowired
-	 private SessionRegistry sessionRegistry;
-	
 
-    // SessionRegistry Å¬·¡½º(±âº»)
-    //((¼¼¼Ç: ÀÏÁ¤½Ã°£µ¿¾È °°Àº »ç¿ëÀÚ·ÎºÎÅÍ µé¾î¿À´Â ÀÏ·ÃÀÇ ¿ä±¸¸¦ ÇÏ³ª·Î º¸°í ±× »óÅÂ¸¦ ÀÏÁ¤ÇÏ°Ô À¯Áö½ÃÅ°´Â ±â¼ú
-    // ÀÏÁ¤½Ã°£Àº ¹æ¹®ÀÚ°¡ À¥ ºê¶ó¿ìÀú¸¦ ÅëÇØ À¥ ¼­¹ö¿¡ Á¢¼ÓÇÑ ½ÃÁ¡À¸·ÎºÎÅÍ À¥ ºê¶ó¿ìÀú¸¦ Á¾·áÇÏ¿© ¿¬°áÀ» ³¡³»´Â ½ÃÁ¡
-    // ,Áï ¹æ¹®ÀÚ°¡ À¥ ¼­¹ö¿¡ Á¢¼ÓÇØ ÀÖ´Â »óÅÂ¸¦ ÇÏ³ªÀÇ ´ÜÀ§·Î º¸°í ±×°ÍÀ» ¼¼¼ÇÀÌ¶ó°í ÇÔ))
-    
-    //»ç¿ëÀÚÀÇ ÀÎÁõÁ¤º¸¿Í ±× ÀÎÁõÁ¤º¸°¡ °¡Áö°í ÀÖ´Â ¼¼¼Çµé
-    //(ÇÑ »ç¶÷ÀÇ »ç¿ëÀÚ°¡ ¿©·¯ ¼¼¼ÇÀ» »ý¼ºÇÏ¸é¼­ µé¾î¿Ã ¼ö ÀÖ´Ù
-    //ºê¶ó¿ìÀú¸¦ ´Þ¸®ÇÑµÚ °¢°¢ ·Î±×ÀÎ ÇÏ°Ô µÇ¸é ÇÏ³ªÀÇ »ç¿ëÀÚ°¡ 2°³ÀÇ ¼­·Î ´Ù¸¥ ¼¼¼Ç ID¸¦ °®°Ô µÊ)
-    //ÇÏ³ªÀÇ ºê¶ó¿ìÀú·Î ¿©·¯°³ÀÇ Ã¢À» ¿­¾îµµ °°Àº »ç¿ëÀÚ = Á¤º¸À¯Áö
-    
+    @Autowired
+    @Qualifier("customAuthenticationProvider")
+    private AuthenticationProvider authenticationProvider;
 
-    //AuthenticationManagerBuilder(±âº»Á¦°ø)¸¦ ÅëÇØ ÀÎÁõ °´Ã¼¸¦ ¸¸µé ¼ö ÀÖµµ·Ï Á¦°ø
-    //·Î±×ÀÎÀ» À§ÇØ¼­´Â SecurityConfig Å¬·¡½º¿¡ AuthenticationManagerBuilder¸¦ ÁÖÀÔÇØ¼­ ÀÎÁõ¿¡ ´ëÇÑ Ã³¸®
-    //ÀÎÁõ ¸Å´ÏÀúµéÀº ÀÎÁõ/ÀÎ°¡¸¦ À§ÇÑ UserDetailsService¸¦ ÅëÇØ¼­ ÇÊ¿äÇÑ Á¤º¸µéÀ» °¡Á®¿É´Ï´Ù.
-    //UserDetails´Â »ç¿ëÀÚÀÇ Á¤º¸ + ±ÇÇÑ Á¤º¸µéÀÇ ¹­À½
+    @Autowired
+    @Qualifier("userService")
+    UserDetailsService userDetailsService;
 
-//	  @Autowired
-//	  public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//	     auth.authenticationProvider(authenticationProvider);
-//	  }
+    @Autowired
+    private SessionRegistry sessionRegistry;
+
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth.authenticationProvider(authenticationProvider);
+    }
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        //CustomLoginSuccessHandler : ·Î±×ÀÎ ¼º°ø ÇßÀ» ¶§ ½ÇÇàµÇ´Â Å¬·¡½ºÀÌ´Ï±î
-        //loginPro,login ¼º°ø ½Ã ÄÚµå´Ï±î ÀÏ´Ü ÀÌ ¸µÅ©¸¦ ¹«½ÃÇÑ´Ù
+        //CustomLoginSuccessHandler : ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½Ì´Ï±ï¿½
+        //loginPro,login ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Úµï¿½Ï±ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½
         CustomLoginSuccessHandler handler = new CustomLoginSuccessHandler();
         handler.addIgnoreUrl("/loginPro");
         handler.addIgnoreUrl("/top/login"); //.successHandler(handler)
-
+                    
         http.addFilterBefore(characterEncodingFilter(), SecurityContextPersistenceFilter.class)
-                .formLogin() // .formLogin() - Form ·Î±×ÀÎ ÀÎÁõ ±â´ÉÀÌ ÀÛµ¿ÇÔ
-                .loginPage("/top/login") // loginPage - ·Î±×ÀÎ ÆäÀÌÁö °æ·Î ¼³Á¤
-                .usernameParameter("email") // ¾ÆÀÌµð ÆÄ¶ó¹ÌÅÍ¸í ¼³Á¤
-                .passwordParameter("pw") //ÆÐ½º¿öµå ÆÄ¶ó¹ÌÅÍ¸í ¼³Á¤
-                .loginProcessingUrl("/loginPro")// loginProcessingUrl - POST·Î ·Î±×ÀÎ Á¤º¸¸¦ º¸³¾ ½Ã °æ·Î 
-//                .defaultSuccessUrl("/home") // ¼º°ø½Ã º¸¿©ÁÙ ÆäÀÌÁö
+                .formLogin() // .formLogin() - Form ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ûµï¿½ï¿½ï¿½
+                .loginPage("/top/login") // loginPage - ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                .usernameParameter("email") // ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ä¶ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+                .passwordParameter("pw") //ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¶ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+                .loginProcessingUrl("/loginPro")// loginProcessingUrl - POSTï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ 
+//                .defaultSuccessUrl("/home") // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 .failureHandler(new CustomLoginFailureHandler())
                 .successHandler(handler)
 
                 .and().cors()
 
                 .and()
-                .authorizeRequests() //authorizeRequests() - ½ÃÅ¥¸®Æ¼ Ã³¸®¿¡ HttpServletRequest¸¦ ÀÌ¿ëÇÑ´Ù´Â °ÍÀ» ÀÇ¹Ì,¿äÃ»¿¡ ´ëÇÑ ±ÇÇÑÀ» ÁöÁ¤ÇÒ ¼ö ÀÖ´Ù.
-//                .antMatchers("/h2-console/*").permitAll()//antMatchers() Æ¯Á¤ÇÑ °æ·Î¸¦ ÁöÁ¤ //permitAll()´Â ¸ðµç »ç¿ëÀÚ°¡ Á¢±ÙÇÒ ¼ö ÀÖ´Ù´Â °ÍÀ» ÀÇ¹Ì
+                .authorizeRequests() //authorizeRequests() - ï¿½ï¿½Å¥ï¿½ï¿½Æ¼ Ã³ï¿½ï¿½ï¿½ï¿½ HttpServletRequestï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ñ´Ù´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¹ï¿½,ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
+//                .antMatchers("/h2-console/*").permitAll()//antMatchers() Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ //permitAll()ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´Ù´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¹ï¿½
                 .antMatchers("/").permitAll()
                 .antMatchers("/error").permitAll()
                 .antMatchers("/resources/**").permitAll()
 //                .antMatchers("/sign/**").permitAll()
-                .antMatchers("/joinpPro").permitAll() //pathÁÖ¼Ò, form ÅÂ±× action
+                .antMatchers("/joinpPro").permitAll() //pathï¿½Ö¼ï¿½, form ï¿½Â±ï¿½ action
                 .antMatchers("/loginPro").permitAll()
 //                .antMatchers("/sign/**").hasAnyAuthority("ROLE_USER")
-                .antMatchers("/top/**").hasAnyAuthority("ROLE_USER") //.hasAuthority() or hasAnyAuthority() : Æ¯Á¤ ±ÇÇÑÀ» °¡Áö´Â »ç¿ëÀÚ¸¸ Á¢±ÙÇÒ ¼ö ÀÖ´Ù.
+                .antMatchers("/top/**").hasAnyAuthority("ROLE_USER") //.hasAuthority() or hasAnyAuthority() : Æ¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
 //                .antMatchers("/service/copy/**").hasAnyAuthority("ROLE_USER")
 
                 .and()
@@ -94,22 +85,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .and()
                 .exceptionHandling()
-                .accessDeniedHandler(new CustomAccessDeniedHandler()) //·Î±×ÀÎ ½Ã ¿¹¿Ü ³ªÅ¸³¯ ¶§ ºÎÀÎÇÏ´Â È­¸é Ãâ·Â È¤Àº ¿¹¿Ü¹ß»ý½Ã
+                .accessDeniedHandler(new CustomAccessDeniedHandler()) //ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ È­ï¿½ï¿½ ï¿½ï¿½ï¿½ È¤ï¿½ï¿½ ï¿½ï¿½ï¿½Ü¹ß»ï¿½ï¿½ï¿½
 
                 .and()
-                .rememberMe() //¸®¸â¹ö ±â´ÉÀ» ÅëÇØ ·Î±×ÀÎÇÑ »ç¿ëÀÚ¸¸ Á¢±ÙÇÒ ¼ö ÀÖÀ½
-                .key("key") //Åä±Ù ³»¿ë»ý¼ºÇÒ ¶§ »ç¿ëÇÏ´Â Å°
+                .rememberMe() //ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                .key("key") //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ Å°
                 .tokenValiditySeconds(1000)
 //                    .userDetailsService(userService)
 
                 .and()
-                .sessionManagement()  //¼¼¼Ç°ü¸® Å¬·¡½º
-                .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED) //¼¼¼Ç Á¤Ã¥ÀÌ ÁöÁ¤µÈ°Å¸¸ ¼¼¼Ç½ÃÅ²´Ù
-                .sessionFixation().newSession()//»õ·Î¿î ¼¼¼ÇÀ» °íÁ¤½ÃÅ²´Ù
-                .maximumSessions(1)//¼¼¼Ç1°³
-                .expiredUrl("/") //¼¼¼Ç ¸¸·áµÇ¸é ·çÆ®·Î °£´Ù
-                .maxSessionsPreventsLogin(false) //false·Î±×¾Æ¿ô true °ÅºÎ-·Î±×ÀÎ¾ÈµÊ (¼¼¼ÇÇÑ°³ÀÎµ¥ ¿©·¯°³ÀÏ °æ¿ì)
-                .sessionRegistry(sessionRegistry); //¼¼¼Ç ÀúÀå
+                .sessionManagement()  //ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
+                .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED) //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È°Å¸ï¿½ ï¿½ï¿½ï¿½Ç½ï¿½Å²ï¿½ï¿½
+                .sessionFixation().newSession()//ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å²ï¿½ï¿½
+                .maximumSessions(1)//ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½
+                .expiredUrl("/") //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                .maxSessionsPreventsLogin(false) //falseï¿½Î±×¾Æ¿ï¿½ true ï¿½Åºï¿½-ï¿½Î±ï¿½ï¿½Î¾Èµï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½Ñ°ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½)
+                .sessionRegistry(sessionRegistry); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     public CharacterEncodingFilter characterEncodingFilter() {
@@ -118,7 +109,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         characterEncodingFilter.setForceEncoding(true);
         return characterEncodingFilter;
     }
-
-
-
 }
