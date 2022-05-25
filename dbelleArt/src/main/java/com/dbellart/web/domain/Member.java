@@ -1,7 +1,7 @@
 package com.dbellart.web.domain;
 
 
-public class User {
+public class Member {
 	
 	private int userIdx;
 	private String name;

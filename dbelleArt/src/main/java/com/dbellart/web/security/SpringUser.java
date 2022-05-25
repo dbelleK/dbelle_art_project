@@ -3,6 +3,8 @@ package com.dbellart.web.security;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
+import com.dbellart.web.domain.Member;
+
 import java.util.List;
 
 public class SpringUser extends User {
@@ -11,8 +13,8 @@ public class SpringUser extends User {
     //Users¿¡ UserDetails Æ÷ÇÔ
     private User users;
 
-    public SpringUser(String email, String password, List<GrantedAuthority> grantedAuthorities, User users) {
-        super(email, password, grantedAuthorities);
+    public SpringUser(String email, String pw, List<GrantedAuthority> grantedAuthorities, Member member) {
+        super(email, pw, grantedAuthorities);
         this.users = users;
     }
 
