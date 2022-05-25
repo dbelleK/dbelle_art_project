@@ -35,7 +35,7 @@ public class UserController {
 //	        signService.checkUserId(sign);
 	        return "top/login";
 	    }
-	}
+	
 	  
 	  
 //	 @PostMapping("/loginPro")
@@ -50,5 +50,6 @@ public class UserController {
 //		 }
 //		 
 //	 }
+}
 	  
 	 

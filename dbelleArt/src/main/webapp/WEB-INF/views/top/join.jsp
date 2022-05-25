@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% request.setCharacterEncoding("UTF-8"); %>
     
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" charset=UTF-8" ></script>
-<script type="text/javascript" src="/resources/js/join.js" charset=UTF-8"></script> 
-
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/join.js"></script> 
 </head>
+
 
         <!-- Join Start -->
         <div class="container-xxl py-6">

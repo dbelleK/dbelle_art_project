@@ -105,6 +105,20 @@ public class UserService implements UserDetailsService {
 	//
 	//      }).orElseThrow(() -> new BadCredentialsException("일치하지 않습니다."));
 	  }
+	  
+//	//3. 로그인
+//	public boolean loginUserInfo(Member member) {
+//
+//		Member loginSuccess=userMapper.loginUserInfo(member);
+//		
+//		// 이메일과 비밀번호가 null이 아니면 즉, 존재하면 email=pw쿼리 적용
+//		if(loginSuccess != null) {
+//
+//		 return true;
+//		 
+//		}
+//		return false;
+//	}
 	
 	  public void logout() {
 	      ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();

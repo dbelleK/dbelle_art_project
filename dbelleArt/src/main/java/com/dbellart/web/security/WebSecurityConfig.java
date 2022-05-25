@@ -57,20 +57,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         //loginPro,login 성공 시 코드니까 일단 이 링크를 무시한다
         CustomLoginSuccessHandler handler = new CustomLoginSuccessHandler();
         handler.addIgnoreUrl("/loginPro");
-        handler.addIgnoreUrl("/login"); //.successHandler(handler)
+        handler.addIgnoreUrl("/top/login"); //.successHandler(handler)
 
         http.addFilterBefore(characterEncodingFilter(), SecurityContextPersistenceFilter.class)
-                .formLogin().loginPage("/login")
-                .usernameParameter("email")
-                .passwordParameter("pw")
-                .loginProcessingUrl("/loginPro")
+                .formLogin() // .formLogin() - Form 로그인 인증 기능이 작동함
+                .loginPage("/top/login") // loginPage - 로그인 페이지 경로 설정
+                .usernameParameter("email") // 아이디 파라미터명 설정
+                .passwordParameter("pw") //패스워드 파라미터명 설정
+                .loginProcessingUrl("/loginPro")// loginProcessingUrl - POST로 로그인 정보를 보낼 시 경로 
+//                .defaultSuccessUrl("/home") // 성공시 보여줄 페이지
                 .failureHandler(new CustomLoginFailureHandler())
                 .successHandler(handler)
 
                 .and().cors()
 
                 .and()
-                .authorizeRequests() //authorizeRequests()는 시큐리티 처리에 HttpServletRequest를 이용한다는 것을 의미,요청에 대한 권한을 지정할 수 있다.
+                .authorizeRequests() //authorizeRequests() - 시큐리티 처리에 HttpServletRequest를 이용한다는 것을 의미,요청에 대한 권한을 지정할 수 있다.
 //                .antMatchers("/h2-console/*").permitAll()//antMatchers() 특정한 경로를 지정 //permitAll()는 모든 사용자가 접근할 수 있다는 것을 의미
                 .antMatchers("/").permitAll()
                 .antMatchers("/error").permitAll()

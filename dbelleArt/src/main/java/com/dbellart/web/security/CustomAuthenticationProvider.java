@@ -42,8 +42,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String email = (String)authentication.getPrincipal();
         String password = (String)authentication.getCredentials();
-        SpringUser springUser = null;
-
+        SpringUser springUser;
         //카카오 로그인
 //        if(password.equals("moca-web-kakao-login")){
 //            springUser = (SpringUser)snsApiService.loadUserByKakaoUser(email);
@@ -52,8 +51,8 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 //            httpSession.setAttribute("user",springUser.getUser());
 //        }else {
             //스프링 시큐리티 적용 폼 로그인
-//            springUser = (SpringUser) userService.loadUserByUsername(email);
-//            this.withdrawalFilter(springUser);
+            springUser = (SpringUser) userService.loadUserByUsername(email);
+            this.withdrawalFilter(springUser);
             if (!passwordEncoder.matches(password, springUser.getPassword())) {
                 // 로그인 실패 이력 남기기
 //            userService.updateFailedLoginCountPlus(email);
