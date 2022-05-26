@@ -39,7 +39,7 @@
                                 
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="password" class="form-control" id="pw" name="pw" placeholder="Your password" value="">
+                                        <input type="text" class="form-control" id="pw" name="pw" placeholder="Your password" value="">
                                         <label for="password">Your password</label>
                                     </div>
                                 </div>
@@ -47,7 +47,7 @@
                                 
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="password" class="form-control" id="pwCheck" name="pwCheck" placeholder="Password Check" value="">
+                                        <input type="text" class="form-control" id="pwCheck" name="pwCheck" placeholder="Password Check" value="">
                                         <label for="password">Password Check</label>
                                     </div>
                                 </div>
