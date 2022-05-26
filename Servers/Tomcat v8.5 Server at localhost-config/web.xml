@@ -497,15 +497,15 @@
   <!-- A filter that sets character encoding that is used to decode -->
   <!-- parameters in a POST request -->
 
-    <filter>
+<!--     <filter>
         <filter-name>setCharacterEncodingFilter</filter-name>
         <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
         <init-param>
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>
-        </init-param>
+        </init-param> -->
 <!--         <async-supported>true</async-supported> -->
-    </filter>
+<!--     </filter> -->
 
 
   <!-- A filter that triggers request parameters parsing and rejects the    -->
