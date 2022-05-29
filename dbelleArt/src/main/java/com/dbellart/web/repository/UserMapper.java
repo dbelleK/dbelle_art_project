@@ -33,26 +33,26 @@ import com.dbellart.web.domain.UserAuthority;
 
 	public interface UserMapper {
 		
-		//1. È¸¿ø°¡ÀÔ insert
+		//1. È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ insert
 		@Insert("INSERT INTO dbelle.user (name, email, pw, pwCheck, tel, address, checkAll) VALUES (#{name}, #{email}, #{pw}, #{pwCheck}, #{tel}, #{address} , #{checkAll})")
 		@Options(useGeneratedKeys = true, keyProperty = "userIdx")
 		void addUserinfo(Member user);
 		
-		//2. ÀÌ¸ÞÀÏ Áßº¹Ã¼Å© select
+		//2. ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ßºï¿½Ã¼Å© select
 		@Select("select * from dbelle.user where email=#{email}")
 		Member joinUserInfo(String email);
 		
-		//3. ·Î±×ÀÎÇÏ±â
+		//3. ï¿½Î±ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
 		@Select("select * from dbelle.user where email=#{email} and pw=#{pw}")
 		Member loginUserInfo(Member user);
 		
-		//4. ±ÇÇÑ ¼³Á¤ insert
+		//4. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ insert
 		@Insert("INSERT INTO dbelle.authority(user_id,authority,created_date,modified_date) VALUES(#{userId}, #{authority}, NOW(), NOW())")
 		void insertAuthority(UserAuthority userAuthority);
 		 
-		//5. µî·ÏµÈ ±ÇÇÑÀ» °¡Á®¿Â´Ù.
-	    @Select("SELECT * FROM dbelle.authority where email = #{asd}")
-	    List<UserAuthority> findAuthorityById(@Param("asd") Long ids); //ids=º¯¼ö asd=º¯¼öÀÇ °ª
+		//5. ï¿½ï¿½Ïµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â´ï¿½.
+	    @Select("SELECT * FROM dbelle.authority where user_id = #{asd}")
+	    List<UserAuthority> findAuthorityById(@Param("asd") Long ids); //ids=ï¿½ï¿½ï¿½ï¿½ asd=ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
 
 

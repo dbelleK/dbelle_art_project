@@ -1,5 +1,6 @@
 package com.dbellart.web.controller;
 
+import com.dbellart.web.security.SpringUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,21 +17,21 @@ public class UserController {
 //	  @PostMapping("/joinpPro")
 //	  public String joinpPro(Member user) {
 //		  	
-//		  	boolean checkEmail = userService.joinUserInfo(user); //ÀÖ´ÂÁö ¾ø´ÂÁö ¸ÕÀú °Ë»ç¸¦ ÇÏ´Â°ÅÀİ¾Æ ±×·¯¸é ÀÖÀ¸¸é ¹ØÀ¸·Î Âß°¡°í ¾øÀ¸¸é 
+//		  	boolean checkEmail = userService.joinUserInfo(user); //ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ç¸¦ ï¿½Ï´Â°ï¿½ï¿½İ¾ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 //
 //		  	if(checkEmail == true) {
 //		  		userService.addUserinfo(user);
 //		  		return "top/login"; 
 //		  	}else {
-//		  		// ¼÷Á¦ ÇØ°á -> ÄÚµå¸®ºä ¹ßÇ¥ 10ºĞµ¿¾È ¼³¸í
+//		  		// ï¿½ï¿½ï¿½ï¿½ ï¿½Ø°ï¿½ -> ï¿½Úµå¸®ï¿½ï¿½ ï¿½ï¿½Ç¥ 10ï¿½Ğµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //		  		return "top/join"; 
 //			}	  
 //	  }
 	  
-	    @PostMapping("/joinpPro") //È¸¿ø°¡ÀÔ
+	    @PostMapping("/joinpPro") //È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	    public String joinpPro(Member member) {
 	      
-	    	userService.addUserinfo(member); //È¸¿ø°¡ÀÔ(±ÇÇÑµµ)
+	    	userService.addUserinfo(member); //È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Ñµï¿½)
 
 //	        signService.checkUserId(sign);
 	        return "top/login";
@@ -38,18 +39,27 @@ public class UserController {
 	
 	  
 	  
-//	 @PostMapping("/loginPro")
-//	 public String loginPro(Member user) {
-//		 
+	 @PostMapping("/loginPro")
+	 public String loginPro(Member user) {
+
+		 SpringUser springUser = (SpringUser) userService.loadUserByUsername(user.getEmail());
 //		 boolean loginUser = userService.loginUserInfo(user);
-//		 
+
 //		 if(loginUser == true) {
 //			 return "home";
 //		 }else {
-//			 return "top/login"; 
+//			 return "top/login";
 //		 }
-//		 
-//	 }
+
+		 // Todo
+		 // ì…ë ¥í•œ ë¹„ë°€ë²ˆí˜¸ì™€ ì…€ë ‰íŠ¸í•œ user ì •ë³´ì˜ ì‹¤ì œ ë¹„ë°€ë²ˆí˜¸ë¥¼ ë¹„êµ.
+		 // ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•œë‹¤ë©´ ì›í•˜ëŠ” í˜ì´ì§€ë¡œ ë³´ë‚´ê¸°.
+		 // ë¹„ë°€ë²ˆí˜¸ê°€ ë‹¤ë¥´ë‹¤ë©´ ì‹¤íŒ¨ í˜ì´ì§€ë¡œ ë³´ë‚´ê¸°.
+
+
+
+			 return "top/login";
+	 }
 }
 	  
 	 

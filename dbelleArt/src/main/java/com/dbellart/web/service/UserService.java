@@ -41,23 +41,23 @@ public class UserService implements UserDetailsService {
 		
 	
 	  /**
-	   * È¸¿ø °¡ÀÔ
+	   * È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	   *
 	   * @param users
 	   */
 	  public void addUserinfo(Member member) {
-	      //ºñ¹Ð¹øÈ£ ¾ÏÈ£È­
+	      //ï¿½ï¿½Ð¹ï¿½È£ ï¿½ï¿½È£È­
 		  member.setPw(passwordEncoder.encode(member.getPw()));
-	      //È¸¿ø°¡ÀÔ
+	      //È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	      userMapper.addUserinfo(member);
-	      //ÀÌ¸ÞÀÏ·Î À¯ÀúÁ¤º¸ Á¶È¸
-	//      Sign user = userRepository.getUserInfo(users.getEmail()); //ÀÚµ¿ÀûÀ¸·Î idx µé¾î°¨
-	      //Ã£¾Æ¿Â À¯ÀúÁ¤º¸°¡ ÀÖ´Ù¸é?
+	      //ï¿½Ì¸ï¿½ï¿½Ï·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
+	//      Sign user = userRepository.getUserInfo(users.getEmail()); //ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ idx ï¿½ï¿½î°¨
+	      //Ã£ï¿½Æ¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½?
 	      if (member.getUserIdx() != 0) {
 	          UserAuthority userAuthority = new UserAuthority();
 	          userAuthority.setUserId((long) member.getUserIdx());
 	          userAuthority.setAuthority("ROLE_USER");
-	          //À¯Àú±ÇÇÑ µ¥ÀÌÅÍ »ðÀÔ
+	          //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	          userMapper.insertAuthority(userAuthority);
 	      }
 	  }
@@ -68,8 +68,8 @@ public class UserService implements UserDetailsService {
 	//  }
 	
 	  /**
-	   * µî·ÏµÈ È¸¿ø Á¤º¸¸¦ Ãâ·Â
-	   * È¸¿ø°¡ÀÔ µÈ emailÀ» °¡Áö°í ÀÖ´Â user¿¡ ±ÇÇÑÀ» ºÎ¿©ÇØ¼­ ±ÇÇÑÀ» °¡Áö°í ÀÖ´Â SpringUser¸¦ ÀÌ¿ëÇÏ¿© springUser·Î ³Ñ°ÜÁØ´Ù.
+	   * ï¿½ï¿½Ïµï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+	   * È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ emailï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ userï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î¿ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ SpringUserï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ï¿ï¿½ springUserï¿½ï¿½ ï¿½Ñ°ï¿½ï¿½Ø´ï¿½.
 	   *
 	   * @param email
 	   * @return
@@ -87,7 +87,7 @@ public class UserService implements UserDetailsService {
 	          SpringUser springUser = new SpringUser(member.getEmail(), member.getPw(), grantedAuthorities, member);
 	          return springUser;
 	      } else {
-	          throw new BadCredentialsException("ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
+	          throw new BadCredentialsException("ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.");
 	      }
 	
 	//      Optional<Sign> optionalUser = signRepository.findByEmail(username);
@@ -103,22 +103,22 @@ public class UserService implements UserDetailsService {
 	//
 	//          return springUser;
 	//
-	//      }).orElseThrow(() -> new BadCredentialsException("ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù."));
+	//      }).orElseThrow(() -> new BadCredentialsException("ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½."));
 	  }
 	  
-//	//3. ·Î±×ÀÎ
-//	public boolean loginUserInfo(Member member) {
-//
-//		Member loginSuccess=userMapper.loginUserInfo(member);
-//		
-//		// ÀÌ¸ÞÀÏ°ú ºñ¹Ð¹øÈ£°¡ nullÀÌ ¾Æ´Ï¸é Áï, Á¸ÀçÇÏ¸é email=pwÄõ¸® Àû¿ë
-//		if(loginSuccess != null) {
-//
-//		 return true;
-//		 
-//		}
-//		return false;
-//	}
+//	//3. ï¿½Î±ï¿½ï¿½ï¿½
+	public boolean loginUserInfo(Member member) {
+
+		Member loginSuccess=userMapper.loginUserInfo(member);
+
+		// ï¿½Ì¸ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ nullï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ email=pwï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		if(loginSuccess != null) {
+
+		 return true;
+
+		}
+		return false;
+	}
 	
 	  public void logout() {
 	      ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();

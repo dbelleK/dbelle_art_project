@@ -27,7 +27,7 @@
                                 <div class="col-12">
                                     <div class="form-floating">
                                         <input type="password" class="form-control" id="pw" name="pw" placeholder="Your password">
-                                        <label for="password">Please enter your password</label>
+                                        <label for="pw">Please enter your password</label>
                                     </div>
                                 </div>
   
