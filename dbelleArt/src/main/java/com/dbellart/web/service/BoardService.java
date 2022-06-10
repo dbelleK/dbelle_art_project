@@ -18,7 +18,7 @@ public class BoardService {
 		boardMapper.addBoardInfo(board);
 	}
 	
-	public List<Board> showBoardInfo(int boardIdx) {
+	public Board showBoardInfo(int boardIdx) {
 		return boardMapper.showBoardInfo(boardIdx);
 	}
 

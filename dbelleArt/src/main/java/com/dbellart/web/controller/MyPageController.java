@@ -14,7 +14,7 @@ public class MyPageController {
 	private MyPageService mypageService;
 	
     @PostMapping("/mypageInfoPro") 
-    public String joinpPro(Member member) {
+    public String mypageInfoPro(Member member) {
       
     	mypageService.userMyPageCon(member); 
 
