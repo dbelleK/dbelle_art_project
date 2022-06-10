@@ -21,3 +21,14 @@ create table authority(
 );
 
 select*from authority;
+
+create table board(
+	boardIdx int not null AUTO_INCREMENT PRIMARY KEY,
+	title varchar(500) not null,
+	content varchar(500) not null
+	);
+	
+select*from board;
+drop table board;
+
+insert into dbelle.board (title, content) value ("안녕", "안녕1");

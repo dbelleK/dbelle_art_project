@@ -13,33 +13,39 @@
 
 		<div class="row justify-content-center">
 			<div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s">
-				<form>
+				<form action="/qAndaPro" method="POST">
 					<div class="row g-3">
 						<div class="col-12">
 							<div class="form-floating">
-								<textarea class="form-control" placeholder="Leave a message here" id="title" style="height: 100px"></textarea>
+								<textarea class="form-control"
+									placeholder="Leave a message here" id="title" name="title"
+									style="height: 100px"></textarea>
 								<label for="title">제목</label>
 							</div>
 						</div>
 
 						<div class="col-12">
 							<div class="form-floating">
-								<textarea class="form-control" placeholder="Leave a message here" id="content" style="height: 150px"></textarea>
+								<textarea class="form-control"
+									placeholder="Leave a message here" id="content" name="content"
+									style="height: 150px"></textarea>
 								<label for="content">내용</label>
 							</div>
 						</div>
 
-
+						
 						<div class="col-md-6">
-							<button class="btn btn-primary w-100 py-3" type="submit">뒤로가기</button>
+							<a href="top/notice">
+								<button class="btn btn-primary w-100 py-3">뒤로가기</button>
+							</a>
 						</div>
 						<div class="col-md-6">
 							<button class="btn btn-primary w-100 py-3" type="submit">작성완료</button>
 						</div>
-
 					</div>
 				</form>
 			</div>
 		</div>
+
 	</div>
 </div>
