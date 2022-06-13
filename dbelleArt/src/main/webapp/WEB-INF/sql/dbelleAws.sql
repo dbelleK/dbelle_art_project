@@ -4,7 +4,7 @@ create table user(
 	email varchar(50) not null,
 	pw varchar(500) not null,
 	pwCheck varchar(50) not null,
-	tel int not null,
+	tel varchar(50) not null,
 	address varchar(500) not null,
 	checkAll boolean not null,
 	PRIMARY KEY (userIdx)

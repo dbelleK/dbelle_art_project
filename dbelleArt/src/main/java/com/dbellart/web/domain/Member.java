@@ -8,11 +8,9 @@ public class Member {
 	private String email;
 	private String pw;
 	private String pwCheck;
-	private int tel;
+	private String tel;
 	private String address;
 	private boolean checkAll;
-	
-	
 	
 	public int getUserIdx() {
 		return userIdx;
@@ -44,10 +42,10 @@ public class Member {
 	public void setPwCheck(String pwCheck) {
 		this.pwCheck = pwCheck;
 	}
-	public int getTel() {
+	public String getTel() {
 		return tel;
 	}
-	public void setTel(int tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 	public String getAddress() {
@@ -62,5 +60,9 @@ public class Member {
 	public void setCheckAll(boolean checkAll) {
 		this.checkAll = checkAll;
 	}
+	
+	
+
+	
 	
 }
