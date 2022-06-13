@@ -18,12 +18,13 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s">
                         <form action="/joinpPro" method="POST">
+<!--                         <form action="/joinpPro" method="POST" id="btnForm" name="Join_form" onsubmit="return validate()"> -->
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                             <div class="row g-3">
                             
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" value="">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" value="" required >
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
@@ -31,7 +32,7 @@
                                 
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="email" name="email" placeholder="Your Email" value="">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" value="" required>
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
@@ -39,7 +40,7 @@
                                 
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="pw" name="pw" placeholder="Your password" value="">
+                                        <input type="password" class="form-control" id="pw" name="pw" placeholder="Your password" value="" required>
                                         <label for="password">Your password</label>
                                     </div>
                                 </div>
@@ -47,7 +48,7 @@
                                 
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="pwCheck" name="pwCheck" placeholder="Password Check" value="">
+                                        <input type="password" class="form-control" id="pwCheck" name="pwCheck" placeholder="Password Check" value="" required>
                                         <label for="password">Password Check</label>
                                     </div>
                                 </div>
@@ -55,7 +56,7 @@
                                 
                                 <div class="col-12">
                                     <div class="form-floating">
-                                    	<input type="text" class="form-control" id="tel" name="tel" placeholder="tel" value="">
+                                    	<input type="text" class="form-control" id="tel" name="tel" placeholder="tel" value="" required>
                                         <label for="tel">Your tel</label>
                                     </div>
                                 </div>
@@ -63,7 +64,7 @@
                                 
                                 <div class="col-12">
                                     <div class="form-floating">
-                                    	<input type="text" class="form-control" id="address" name="address" placeholder="address" value="">
+                                    	<input type="text" class="form-control" id="address" name="address" placeholder="address" value="" required>
                                         <label for="address">Your address</label>
                                     </div>
                                 </div>
@@ -72,13 +73,13 @@
                                 <!-- 전체약관동의 누르고 창 뜨게해서 그 안에 3개정도 글 쓰고 체크하게 하기 -->
                                 <div class="col-12">
                                     <div class="form-floating">
-                                    	<input type="checkbox" class="form-control" id="checkAll" name="checkAll" placeholder="전체 약관 동의" value="">
+                                    	<input type="checkbox" class="form-control" id="checkAll" name="checkAll" placeholder="전체 약관 동의" value="" >
                                         <label for="checkAll">전체 약관 동의</label>
                                     </div>
                                 </div>
                              
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">JOIN</button>
+                                    <button type="submit" id="sendJoin" class="btn btn-primary w-100 py-3">JOIN</button>
                                 </div>
                                 
                                 
