@@ -28,12 +28,11 @@ public class UserController {
 //			}	  
 //	  }
 	  
-	    @PostMapping("/joinpPro") //ȸ������
+	    @PostMapping("/joinpPro") 
 	    public String joinpPro(Member member) {
 	      
-	    	userService.addUserinfo(member); //ȸ������(���ѵ�)
+	    	userService.addUserinfo(member);
 
-//	        signService.checkUserId(sign);
 	        return "top/login";
 	    }
 	
