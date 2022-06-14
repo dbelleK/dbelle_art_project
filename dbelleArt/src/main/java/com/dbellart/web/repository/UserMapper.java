@@ -33,14 +33,18 @@ import com.dbellart.web.domain.UserAuthority;
 
 	public interface UserMapper {
 		
-		//1. ȸ������ insert
+		//1. 회원가입 insert
 		@Insert("INSERT INTO dbelle.user (name, email, pw, pwCheck, tel, address, checkAll) VALUES (#{name}, #{email}, #{pw}, #{pwCheck}, #{tel}, #{address} , #{checkAll})")
 		@Options(useGeneratedKeys = true, keyProperty = "userIdx")
 		void addUserinfo(Member user);
 		
-		//2. �̸��� �ߺ�üũ select
+		//2.
 		@Select("select * from dbelle.user where email=#{email}")
 		Member joinUserInfo(String email);
+		
+		//3.이메일 중복검사
+		@Select("select COUNT(email) from dbelle.user where email=#{email}")
+		int emailCheck(String email);
 		
 		//3. �α����ϱ�
 		@Select("select * from dbelle.user where email=#{email} and pw=#{pw}")

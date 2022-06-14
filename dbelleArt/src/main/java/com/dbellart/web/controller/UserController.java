@@ -10,38 +10,36 @@ import com.dbellart.web.service.UserService;
 
 @Controller
 public class UserController {
-		  
-	  @Autowired
-	  private UserService userService;
-	  
-//	  @PostMapping("/joinpPro")
-//	  public String joinpPro(Member user) {
-//		  	
-//		  	boolean checkEmail = userService.joinUserInfo(user); //�ִ��� ������ ���� �˻縦 �ϴ°��ݾ� �׷��� ������ ������ �߰��� ������ 
+
+	@Autowired
+	private UserService userService;
+
+//		@PostMapping("/joinpPro")
+//		public String joinpPro(Member member) {
 //
-//		  	if(checkEmail == true) {
-//		  		userService.addUserinfo(user);
-//		  		return "top/login"; 
-//		  	}else {
-//		  		// ���� �ذ� -> �ڵ帮�� ��ǥ 10�е��� ����
-//		  		return "top/join"; 
-//			}	  
-//	  }
-	  
-	    @PostMapping("/joinpPro") 
-	    public String joinpPro(Member member) {
-	      
-	    	userService.addUserinfo(member);
+//			boolean checkEmailInfo = userService.joinUserInfo(member.getEmail());
+//
+//			if (checkEmailInfo == true) {
+//				userService.addUserinfo(member);
+//				return "top/login";
+//			} else {
+//				return "top/join";
+//			}
+//
+//		}
 
-	        return "top/login";
-	    }
-	
-	  
-	  
-	 @PostMapping("/loginPro")
-	 public String loginPro(Member user) {
+	@PostMapping("/joinpPro")
+	public String joinpPro(Member member) {
 
-		 SpringUser springUser = (SpringUser) userService.loadUserByUsername(user.getEmail());
+		userService.addUserinfo(member);
+
+		return "top/login";
+	}
+
+	@PostMapping("/loginPro")
+	public String loginPro(Member user) {
+
+		SpringUser springUser = (SpringUser) userService.loadUserByUsername(user.getEmail());
 //		 boolean loginUser = userService.loginUserInfo(user);
 
 //		 if(loginUser == true) {
@@ -50,15 +48,11 @@ public class UserController {
 //			 return "top/login";
 //		 }
 
-		 // Todo
-		 // 입력한 비밀번호와 셀렉트한 user 정보의 실제 비밀번호를 비교.
-		 // 비밀번호가 일치한다면 원하는 페이지로 보내기.
-		 // 비밀번호가 다르다면 실패 페이지로 보내기.
+		// Todo
+		// 입력한 비밀번호와 셀렉트한 user 정보의 실제 비밀번호를 비교.
+		// 비밀번호가 일치한다면 원하는 페이지로 보내기.
+		// 비밀번호가 다르다면 실패 페이지로 보내기.
 
-
-
-			 return "top/login";
-	 }
+		return "top/login";
+	}
 }
-	  
-	 

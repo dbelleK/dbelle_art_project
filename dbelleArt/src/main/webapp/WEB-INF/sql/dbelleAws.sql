@@ -21,6 +21,7 @@ create table authority(
 );
 
 select*from authority;
+drop table authority;
 
 create table board(
 	boardIdx int not null AUTO_INCREMENT PRIMARY KEY,

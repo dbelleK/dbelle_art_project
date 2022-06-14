@@ -67,14 +67,15 @@ public class UserService implements UserDetailsService {
 	//      return user;
 	//  }
 	
-	  /**
-	   * ��ϵ� ȸ�� ������ ���
-	   * ȸ������ �� email�� ������ �ִ� user�� ������ �ο��ؼ� ������ ������ �ִ� SpringUser�� �̿��Ͽ� springUser�� �Ѱ��ش�.
-	   *
-	   * @param email
-	   * @return
-	   * @throws UsernameNotFoundException
-	   */
+	    /**
+	     * 등록된 회원 정보를 출력
+	     * 회원가입 된 email을 가지고 있는 user에 권한을 부여해서 권한을 가지고 있는 SpringUser를 이용하여 springUser로 넘겨준다.
+	     * <<스프링 시큐리티 적용 폼 로그인>>
+	     *
+	     * @param email
+	     * @return
+	     * @throws UsernameNotFoundException
+	     */
 	  @Override
 	  public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 	      Member member = userMapper.joinUserInfo(email);
@@ -87,7 +88,7 @@ public class UserService implements UserDetailsService {
 	          SpringUser springUser = new SpringUser(member.getEmail(), member.getPw(), grantedAuthorities, member);
 	          return springUser;
 	      } else {
-	          throw new BadCredentialsException("��ġ���� �ʽ��ϴ�.");
+	          throw new BadCredentialsException("일치하지 않습니다.");
 	      }
 	
 	//      Optional<Sign> optionalUser = signRepository.findByEmail(username);
@@ -104,6 +105,27 @@ public class UserService implements UserDetailsService {
 	//          return springUser;
 	//
 	//      }).orElseThrow(() -> new BadCredentialsException("��ġ���� �ʽ��ϴ�."));
+	  }
+	  
+//	  //이메일 중복확인
+//	  public boolean joinUserInfo(String email) {
+//		 
+//		  Member emailCheck = userMapper.joinUserInfo(email);
+//		  
+//		  if(emailCheck == null) {
+//			  return true;
+//		  }else {
+//			  return false;
+//		  }
+//	  }
+	  
+	  //이메일 ajax 중복확인
+	  public int emailCheck(String email) {
+		  
+		  int cnt = userMapper.emailCheck(email);
+		  System.out.println("cnt:" + cnt);
+		 
+		  return cnt;
 	  }
 	  
 //	//3. �α���
