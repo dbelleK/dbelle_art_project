@@ -3,6 +3,7 @@
 
 <head>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
 <script type="text/javascript"
 	src="/resources/js/join.js?v=<%=System.currentTimeMillis() %>"></script>
 <!-- ?v=<%=System.currentTimeMillis() %> -> js 파일을 가져올 때 이전 js파일로 적용되는 경우 해결 방법  -->
@@ -22,7 +23,8 @@
 		<div class="row justify-content-center">
 			<div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s">
 				<form action="/joinpPro" method="POST" id="btnForm" onsubmit="return false">
-					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+					<input type="hidden" name="${_csrf.parameterName}"
+						value="${_csrf.token}" />
 					<div class="row g-3">
 
 						<div class="col-12">
@@ -37,19 +39,20 @@
 						<div class="col-12">
 							<div class="form-floating">
 								<input type="email" class="form-control" id="email" name="email"
-									placeholder="Your Email" value="" required>
-									  <label for="email">Your Email</label>
+									placeholder="Your Email" value="" required> <label
+									for="email">Your Email</label>
 							</div>
 						</div>
-						<span id="vaildEmail"></span> 
+						<span id="vaildEmail"></span>
 
 
 
 						<div class="col-12">
 							<div class="form-floating">
 								<input type="password" class="form-control" id="pw" name="pw"
-									placeholder="Your password" value="" required  autocomplete="off" > <label
-									for="password">Your password</label>
+									placeholder="Your password" value="" required
+									autocomplete="off"> <label for="password">Your
+									password</label>
 							</div>
 						</div>
 						<span id="vaildPw"></span>
@@ -57,8 +60,9 @@
 						<div class="col-12">
 							<div class="form-floating">
 								<input type="password" class="form-control" id="pwCheck"
-									name="pwCheck" placeholder="Password Check" value="" required  autocomplete="off" >
-								<label for="password">Password Check</label>
+									name="pwCheck" placeholder="Password Check" value="" required
+									autocomplete="off"> <label for="password">Password
+									Check</label>
 							</div>
 						</div>
 						<span id="vaildPwcheck"></span>
@@ -80,18 +84,56 @@
 							</div>
 						</div>
 						<span id="vaildAddress"></span>
+						
 
-						<!-- 전체약관동의 누르고 창 뜨게해서 그 안에 3개정도 글 쓰고 체크하게 하기 -->
-						<div class="col-12">
-							<div class="form-floating">
-								<input type="checkbox" class="form-control" id="checkAll"
-									name="checkAll" placeholder="전체 약관 동의" value=""> <label
-									for="checkAll">전체 약관 동의</label>
+						<div class="form-floating">
+							<div class="btn btn-link">
+								<input type="checkbox" id="checkAll" name="checkAll"> 
+									<label for="checkAll"> 약관 전체 동의하기</label>
 							</div>
+							<p></p>
+							<div class="btn btn-link">
+								<input type="checkbox" id="privacyAgreeCheckbox" name="privacyAgreeCheckbox" class="normal">
+									 <label for="privacyAgreeCheckbox"> [필수] 개인정보 수집 및 이용 동의 </label> 
+								<button class="d-inline-block border rounded-pill text-primary px-4 mb-3" onclick="javascript:openWin1()">자세히</button>
+							</div>
+							<div class="btn btn-link">
+								<input type="checkbox" id="dbelleAgreeCheckbox" name="dbelleAgreeCheckbox" class="normal">
+									 <label for="dbelleAgreeCheckbox"> [필수] dbelleArt, dbelleArt 스토어 이용 악관 </label>
+								<button class="d-inline-block border rounded-pill text-primary px-4 mb-3" onclick="javascript:openWin2()">자세히</button>
+							</div>
+							
+							
+							<div class="btn btn-link">
+								<input type="checkbox" id="marketingAgreeCheckbox" name="marketingAgreeCheckbox"  class="normal">
+									 <label for="marketingAgreeCheckbox"> [선택] 마케팅 활용 및 광고성 정보 수신 동의 </label>
+										<button class="d-inline-block border rounded-pill text-primary px-4 mb-3"  onclick="javascript:openWin3()">자세히</button>
+							</div>
+							<br/>
+							<span id="vaildEssential"></span>
 						</div>
+						
+
+
+<!-- 							<div class="btn btn-link">
+								<input type="checkbox" id="marketingReceiveAgreeCheckbox"
+									name="marketingReceiveAgreeCheckbox" class="blind"> <label
+									for="marketingReceiveAgreeCheckbox"
+									class="login-checkbox--version__label login-join-membership__checkbox__label"><svg
+										width="16" height="16" viewBox="0 0 16 16" fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+										class="login-checkbox--version__svg">
+										<title></title> <path
+											d="M2.6665 8L6.39952 11.7333L13.8665 4.26666"
+											stroke="#D1D1D1" stroke-width="1.5" stroke-linecap="square"
+											class="svg-color"></path></svg> [선택] 마케팅 활용 및 광고성 정보 수신 동의 </label>
+								<button class="login-checkbox--version__link">자세히</button>
+							</div> -->
+
 
 						<div class="col-12">
-							<button type="submit" id="sendJoin" class="btn btn-primary w-100 py-3">JOIN</button>
+							<button type="submit" id="sendJoin"
+								class="btn btn-primary w-100 py-3">JOIN</button>
 						</div>
 
 

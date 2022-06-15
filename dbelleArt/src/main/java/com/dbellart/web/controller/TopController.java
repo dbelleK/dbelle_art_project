@@ -21,36 +21,36 @@ public class TopController {
 	@RequestMapping("join")
 	public String join() {
 		System.out.println("join �옉�룞");
-		return "/top/join";
+		return "top/join";
 	}
 	
 	@RequestMapping("login")
 	public String login() {
 		System.out.println("login �옉�룞");
-		return "/top/login";
+		return "top/login";
 	}
 	
 	@RequestMapping("myPage")
 	public String myPage() {
 		System.out.println("myPage �옉�룞");
-		return "/top/myPage";
+		return "top/myPage";
 	}
 	
 	@RequestMapping("notice")
 	public String notice() {
 		System.out.println("notice �옉�룞");
-		return "/top/notice";
+		return "top/notice";
 	}
 	@RequestMapping("write")
 	public String write() {
 		System.out.println("write �옉�룞");
-		return "/top/write";
+		return "top/write";
 	}
 	
 	@RequestMapping("contact")
 	public String contact() {
 		System.out.println("contact �옉�룞");
-		return "/top/contact";
+		return "top/contact";
 	}
 
 
