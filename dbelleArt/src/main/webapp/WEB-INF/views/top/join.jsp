@@ -37,7 +37,7 @@
 						<div class="col-12">
 							<div class="form-floating">
 								<input type="email" class="form-control" id="email" name="email"
-									placeholder="Your Email" value="" required oninput = "checkEmail()">
+									placeholder="Your Email" value="" required>
 									  <label for="email">Your Email</label>
 							</div>
 						</div>

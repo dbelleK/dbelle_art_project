@@ -36,7 +36,7 @@ import com.dbellart.web.domain.UserAuthority;
 		//1. 회원가입 insert
 		@Insert("INSERT INTO dbelle.user (name, email, pw, pwCheck, tel, address, checkAll) VALUES (#{name}, #{email}, #{pw}, #{pwCheck}, #{tel}, #{address} , #{checkAll})")
 		@Options(useGeneratedKeys = true, keyProperty = "userIdx")
-		void addUserinfo(Member user);
+		void addUserinfo(Member ㄴㄷㄱuser);
 		
 		//2.
 		@Select("select * from dbelle.user where email=#{email}")
