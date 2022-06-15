@@ -50,9 +50,4 @@ public class UserController {
 		return "top/login";
 	}
 	
-	@RequestMapping("marketingAgree")
-	public String marketingAgree() {
-		System.out.println("약관동의 자세히 창");
-		return "top/agree/marketingAgree";
-	}
 }

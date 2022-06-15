@@ -52,6 +52,24 @@ public class TopController {
 		System.out.println("contact �옉�룞");
 		return "top/contact";
 	}
+	
+	@RequestMapping("privacyAgree")
+	public String privacyAgree() {
+		System.out.println("약관동의 자세히 창1");
+		return "top/agree/privacyAgree";
+	}
 
+	@RequestMapping("dbelleAgree")
+	public String dbelleAgree() {
+		System.out.println("약관동의 자세히 창2");
+		return "top/agree/dbelleAgree";
+	}
+	
+	@RequestMapping("marketingAgree")
+	public String marketingAgree() {
+		System.out.println("약관동의 자세히 창3");
+		return "top/agree/marketingAgree";
+	}
+	
 
 }
