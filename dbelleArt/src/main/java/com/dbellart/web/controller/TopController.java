@@ -77,7 +77,7 @@ public class TopController {
 	}
 	
 	@RequestMapping("marketingAgree")
-	public String marketingAgree() {
+	public String Agree() {
 		System.out.println("약관동의 자세히 창3");
 		return "top/agree/marketingAgree";
 	}
