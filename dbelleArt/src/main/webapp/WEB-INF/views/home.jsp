@@ -1,6 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 
+<style>
+.container-xxl.bg-primary.page-header{
+display:none;
+}
+</style>
+
 <!-- <head>
     <meta charset="utf-8">
     <title>BizConsult - Consulting HTML Template</title>

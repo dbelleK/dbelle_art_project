@@ -1,10 +1,19 @@
 package com.dbellart.web.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.dbellart.web.domain.Board;
+import com.dbellart.web.service.BoardService;
 
 @Controller
 public class TopController {
+	
+	@Autowired
+	private BoardService boardService;
 	
 	@RequestMapping("about")
 	public String about() {
@@ -36,11 +45,13 @@ public class TopController {
 		return "top/myPage";
 	}
 	
-	@RequestMapping("notice")
-	public String notice() {
-		System.out.println("notice �옉�룞");
-		return "top/notice";
-	}
+//	@RequestMapping("notice")
+//	public String notice() {
+//		System.out.println("notice 실행");
+//		return "top/notice";
+//	}
+//	
+	
 	@RequestMapping("write")
 	public String write() {
 		System.out.println("write �옉�룞");

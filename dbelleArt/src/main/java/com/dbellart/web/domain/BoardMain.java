@@ -1,7 +1,7 @@
 package com.dbellart.web.domain;
 
 public class BoardMain {
-
+	
 	private int boardMainIdx;
 	private String titleMain;
 	private String contentMain;
@@ -24,6 +24,9 @@ public class BoardMain {
 	public void setContentMain(String contentMain) {
 		this.contentMain = contentMain;
 	}
+	
 
 	
+	
+
 }
