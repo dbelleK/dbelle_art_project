@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<!-- Service Start(notive) -->
+<!-- Service Start(notice) -->
 <div class="container-xxl py-6">
 	<div class="container">
 		<div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s"
@@ -118,9 +118,7 @@
 <div class="container-xxl py-6">
 	<div class="container">
 
-		<div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s"
-			style="max-width: 600px;">
-
+		<div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
 			<div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Q&A</div>
 			<h2 class="mb-5">Please Ask Questions</h2>
 			<h6 class="mb-5">

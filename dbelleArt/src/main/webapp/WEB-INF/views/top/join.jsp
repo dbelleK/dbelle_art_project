@@ -95,24 +95,21 @@
 							<div class="btn btn-link">
 								<input type="checkbox" id="privacyAgreeCheckbox" name="privacyAgreeCheckbox" class="normal">
 									 <label for="privacyAgreeCheckbox"> [필수] 개인정보 수집 및 이용 동의 </label> 
-								<button class="d-inline-block border rounded-pill text-primary px-4 mb-3" onclick="javascript:openWin1()" >자세히
-								<!-- <a href="/privacyAgree"></a> -->
+								<button class="d-inline-block border rounded-pill text-primary px-4 mb-3" onclick="location.href='/privacyAgree'" >자세히
 								</button>
 								
 							</div>
 							<div class="btn btn-link">
 								<input type="checkbox" id="dbelleAgreeCheckbox" name="dbelleAgreeCheckbox" class="normal">
 									 <label for="dbelleAgreeCheckbox"> [필수] dbelleArt, dbelleArt 스토어 이용 악관 </label>
-								<button class="d-inline-block border rounded-pill text-primary px-4 mb-3" onclick="javascript:openWin2()">자세히</button>
+								<button class="d-inline-block border rounded-pill text-primary px-4 mb-3" onclick="location.href='/dbelleAgree'">자세히</button>
 							</div>
 							
 							
 							<div class="btn btn-link">
 								<input type="checkbox" id="marketingAgreeCheckbox" name="marketingAgreeCheckbox"  class="normal">
 									 <label for="marketingAgreeCheckbox"> [선택] 마케팅 활용 및 광고성 정보 수신 동의 </label>
-										<button class="d-inline-block border rounded-pill text-primary px-4 mb-3">자세히
-											<a href="/marketingAgree"></a>
-										</button>
+										<button class="d-inline-block border rounded-pill text-primary px-4 mb-3" onclick="location.href='/marketingAgree'">자세히</button>
 							</div>
 							
 							<br/>
