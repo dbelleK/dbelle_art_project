@@ -3,16 +3,7 @@ function goBack(){
 	window.history.back();
 }
 
-/*function onPrivacy(){
-	$('.privacy').show()
-}
-function onStore(){
-	$('.store').show()
-}
-function onMarketing(){
-	$('.marketing').show()
-}*/
-
+// 내용
 $(function() {
 	$('#pr').click(function() {
 		if ($('.privacy').css("display") == "none") {
@@ -42,6 +33,20 @@ $(function() {
 			$('.store').hide();
 		}
 	});
+});
+
+
+// 버튼 색
+$(function() {  
+$('.TermsModal__navigatorItem').click(function(){
+    $('.green').css('color', '#6a666e');
+  });
+});
+
+$(function() {  
+$('.green').click(function(){
+    $('.green').css('color' , '#1dd5a2');
+  });
 });
 
 
