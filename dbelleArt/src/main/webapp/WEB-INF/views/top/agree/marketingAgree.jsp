@@ -7,7 +7,6 @@
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="/resources/js/pop.js?v=<%=System.currentTimeMillis() %>"></script>
-<script type="text/javascript" src="/resources/js/join.js?v=<%=System.currentTimeMillis() %>"></script>
 
 <link href="/resources/css/popup.css" rel="stylesheet"> 
 <link href="/resources/css/popupButton.css" rel="stylesheet">

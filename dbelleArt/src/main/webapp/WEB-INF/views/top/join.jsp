@@ -4,6 +4,8 @@
 <head>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
 <script type="text/javascript"
 	src="/resources/js/join.js?v=<%=System.currentTimeMillis() %>"></script>
 <!-- ?v=<%=System.currentTimeMillis() %> -> js 파일을 가져올 때 이전 js파일로 적용되는 경우 해결 방법  -->
@@ -79,11 +81,11 @@
 						<div class="col-12">
 							<div class="form-floating">
 								<input type="text" class="form-control" id="address"
-									name="address" placeholder="address" value="" required>
+									name="address" placeholder="address" value="" required >
 								<label for="address">Your address</label>
 							</div>
 						</div>
-						<span id="vaildAddress"></span>
+						<span id="vaildAddress" ></span>
 						
 
 						<div class="form-floating">
