@@ -45,7 +45,7 @@ $('.TermsModal__navigatorItem').click(function(){
 
 $(function() {  
 $('.green').click(function(){
-    $('.green').css('color' , '#1dd5a2');
+    $('.green').css('backgroud' , '#1dd5a2');
   });
 });
 
