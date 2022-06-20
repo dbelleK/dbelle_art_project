@@ -1,12 +1,11 @@
 package com.dbellart.web.controller;
 
-import com.dbellart.web.security.SpringUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dbellart.web.domain.Member;
+import com.dbellart.web.security.SpringUser;
 import com.dbellart.web.service.UserService;
 
 @Controller
@@ -49,5 +48,21 @@ public class UserController {
 
 		return "top/login";
 	}
+	
+
+    //http://localhost8088/login
+//    @RequestMapping(path = "login")
+//    public ModelAndView login(Principal principal, @RequestParam(value = "error", defaultValue = "false") Boolean error) {
+//            if (error) { //error가 true일 때 : 로그인이 되지 않았을 때
+//                return new ModelAndView("user/login"). // 다시 login페이지를 보여준다
+//                        addObject("error", error);
+//            } else {
+//
+//                if (!ObjectUtils.isEmpty(principal)) { //로그인이 되었을 때
+//                    return new ModelAndView("index"); //index페이지를 보여준다
+//                }
+//                return new ModelAndView("user/login"); //그렇지 않으면(로그인이 되지 않으면) login 페이지를 보여준다
+//            }
+//    }
 	
 }

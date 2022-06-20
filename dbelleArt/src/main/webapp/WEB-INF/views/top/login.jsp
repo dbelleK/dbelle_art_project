@@ -35,12 +35,28 @@
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-3" type="submit">LOGIN</button>
                                 </div>
-                                
-                                
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Join End -->
+
+								<div>
+									<span style="margin: 0">SNS 간편 로그인</span> 
+									<a href="#" onclick="kakaoLogin()">
+										<div>kakao</div>
+									</a>
+									<a href="#" onclick="naverLogin()">
+										<div>naver</div>
+									</a>
+								</div>
+
+								<div>
+									<button class="findPassword" id="findPassword" type="button" data-toggle="modal" data-target="#findPasswordModal">비밀번호찾기</button>
+								</div>
+								
+								<!-- 비밀번호 찾기 Modal -->
+													</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!--login End -->
+								
+

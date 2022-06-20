@@ -30,7 +30,7 @@
 	color: #1dd5a2;
 	font-weight: 500;
 	border-bottom: 0.2rem solid transparent;
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	height: 80%;
 	padding: 0 1.2rem;
 }
@@ -40,7 +40,7 @@
 	color: #1dd5a2;
 	font-weight: 500;
 	border-bottom: 0.2rem solid transparent;
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	height: 80%;
 	padding: 0 1.2rem;
 }
@@ -49,7 +49,7 @@
 	color: #6a666e;
 	font-weight: 500;
 	border-bottom: 0.2rem solid transparent;
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	height: 80%;
 	padding: 0 1.2rem;
 }
@@ -59,7 +59,7 @@
 	color: #1dd5a2;
 	font-weight: 500;
 	border-bottom: 0.2rem solid transparent;
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	height: 80%;
 	padding: 0 1.2rem;
 }

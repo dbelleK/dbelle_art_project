@@ -9,6 +9,7 @@
 <script type="text/javascript"
 	src="/resources/js/join.js?v=<%=System.currentTimeMillis() %>"></script>
 <!-- ?v=<%=System.currentTimeMillis() %> -> js 파일을 가져올 때 이전 js파일로 적용되는 경우 해결 방법  -->
+
 </head>
 
 
@@ -46,8 +47,6 @@
 							</div>
 						</div>
 						<span id="vaildEmail"></span>
-
-
 
 						<div class="col-12">
 							<div class="form-floating">
@@ -118,30 +117,12 @@
 							<span id="vaildEssential"></span>
 							
 						</div>
-						
 
 
-<!-- 							<div class="btn btn-link">
-								<input type="checkbox" id="marketingReceiveAgreeCheckbox"
-									name="marketingReceiveAgreeCheckbox" class="blind"> <label
-									for="marketingReceiveAgreeCheckbox"
-									class="login-checkbox--version__label login-join-membership__checkbox__label"><svg
-										width="16" height="16" viewBox="0 0 16 16" fill="none"
-										xmlns="http://www.w3.org/2000/svg"
-										class="login-checkbox--version__svg">
-										<title></title> <path
-											d="M2.6665 8L6.39952 11.7333L13.8665 4.26666"
-											stroke="#D1D1D1" stroke-width="1.5" stroke-linecap="square"
-											class="svg-color"></path></svg> [선택] 마케팅 활용 및 광고성 정보 수신 동의 </label>
-								<button class="login-checkbox--version__link">자세히</button>
-							</div> -->
-
-
-						<div class="col-12">
+						<div class="col-md-6">
 							<button type="submit" id="sendJoin"
 								class="btn btn-primary w-100 py-3">JOIN</button>
 						</div>
-
 
 					</div>
 				</form>

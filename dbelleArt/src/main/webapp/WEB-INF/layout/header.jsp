@@ -26,18 +26,18 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="/" class="nav-item nav-link active">Home</a>
-                        <a href="/about" class="nav-item nav-link">About</a>
+                        <a href="/about" class="nav-item nav-link">Intro</a>
                         <a href="/service" class="nav-item nav-link">Service</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Start</a>
                             <div class="dropdown-menu m-0">
                                 <a href="/join" class="dropdown-item">Join</a>
                                 <a href="/login" class="dropdown-item">Login</a>
-                                <a href="/myPage" class="dropdown-item">My Page</a>
+                                <a href="/myPage" class="dropdown-item">Mypage</a>
                                 <a href="/notice" class="dropdown-item">Notice/Q&A</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="contact.html" class="nav-item nav-link">MemberShip</a>
                     </div>
                     <a href="" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Free Quote</a>
                 </div>
