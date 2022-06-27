@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 
@@ -5,6 +6,12 @@
 .container-xxl.bg-primary.page-header{
 display:none;
 }
+
+/* 핑크 */
+ .bg-primary {
+ background-color: #f36989e6 !important;
+}
+
 </style>
 
 <!-- <head>
@@ -84,8 +91,8 @@ display:none;
                 <div class="container">
                     <div class="row g-5 align-items-center">
                         <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="text-white mb-4 animated zoomIn">We Help To Push Your Business To The Top Level</h1>
-                            <p class="text-white pb-3 animated zoomIn">Tempor rebum no at dolore lorem clita rebum rebum ipsum rebum stet dolor sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam sit justo amet ipsum vero ipsum clita lorem</p>
+                            <h1 class="text-white mb-4 animated zoomIn">Who am I?</h1>
+                            <p class="text-white pb-3 animated zoomIn">자신에 대해 알고싶으면 ! 지금 바로 "성격유형검사" 를 실행해보세요 !</p>
                             <a href="" class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">Learn More</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
@@ -106,7 +113,7 @@ display:none;
                         <img class="img-fluid" src="/resources/img/about.png">
                     </div>
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">About Us</div>
+                        <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">소개</div>
                         <h2 class="mb-4">Award Wining Consultancy Agency For Your Business</h2>
                         <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod</p>
                         <div class="row g-3 mb-4">
@@ -142,8 +149,8 @@ display:none;
             <div class="container px-lg-5">
                 <div class="row align-items-center" style="height: 250px;">
                     <div class="col-12 col-md-6">
-                        <h3 class="text-white">Ready to get started</h3>
-                        <small class="text-white">Diam elitr est dolore at sanctus nonumy.</small>
+                        <h3 class="text-white">검사를 완료하셨나요 ?</h3>
+                        <small class="text-white">여러분의 "성격유형검사지" 를 이메일로 보내드립니다 !</small>
                         <div class="position-relative w-100 mt-3">
                             <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email" style="height: 48px;">
                             <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
@@ -162,7 +169,7 @@ display:none;
         <div class="container-xxl py-6">
             <div class="container">
                 <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Our Services</div>
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">공지사항</div>
                     <h2 class="mb-5">We Provide Solutions On Your Business</h2>
                 </div>
                 <div class="row g-4">
@@ -365,7 +372,7 @@ display:none;
         <div class="container-xxl py-6">
             <div class="container">
                 <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Testimonial</div>
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Q & A</div>
                     <h2 class="mb-5">What Our Clients Say!</h2>
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">

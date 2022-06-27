@@ -3,6 +3,21 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 	<header id="header">
+	
+	<style>
+	.text-primary {
+    color: #b02ae7 !important;
+	}
+	
+	.sticky-top.navbar .navbar-nav .nav-link:hover, .sticky-top.navbar .navbar-nav .nav-link.active {
+    color: #b02ae7;
+}
+
+:root {
+    --primary: #be66e3;
+    --light: #F3F6F8;
+    --dark: #0E2E50;
+	</style>
 
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
@@ -42,10 +57,10 @@
                     </div>
                     <a href="" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">
                     	<c:if test="${empty user.email}">
-							<p>로그인된 계정이 없습니다.</p>
+							LOGIN
 						</c:if>
 						<c:if test="${not empty user.email}">
-							<p>${user.email} 님 로그인 되었습니다.</p>
+							${user.email} 님 로그인 되었습니다.
 						</c:if>
                     </a>
                 </div>
