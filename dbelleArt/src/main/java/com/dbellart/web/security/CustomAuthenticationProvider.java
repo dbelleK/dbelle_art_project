@@ -17,6 +17,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.dbellart.web.service.UserService;
+import com.dbellart.web.service.api.KakaoApiService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpSession;
@@ -32,11 +33,18 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     PasswordEncoder passwordEncoder;
     
     @Autowired
+    KakaoApiService kakaoApiService;
+
+    
+    @Autowired
+    HttpSession httpSession;
+    
+    @Autowired
     @Qualifier("userService")
     UserService userService;
-   // private final SnsApiService snsApiService;
+    
     public final Integer SESSION_TIMEOUT_IN_SECONDS = 30*60;
-//    private final HttpSession httpSession;
+
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -44,23 +52,27 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         String email = (String)authentication.getPrincipal();
         String password = (String)authentication.getCredentials();
         SpringUser springUser;
+        
         //카카오 로그인
-//        if(password.equals("moca-web-kakao-login")){
-//            springUser = (SpringUser)snsApiService.loadUserByKakaoUser(email);
-//            this.withdrawalFilter(springUser);
-//            httpSession.setMaxInactiveInterval(SESSION_TIMEOUT_IN_SECONDS);
-//            httpSession.setAttribute("user",springUser.getUser());
-//        }else {
+        if(password.equals("dbelle-web-kakao-login")){
+            springUser = (SpringUser)kakaoApiService.loadUserByKakaoUser(email);
+            this.withdrawalFilter(springUser);
+            httpSession.setMaxInactiveInterval(SESSION_TIMEOUT_IN_SECONDS);
+            httpSession.setAttribute("user",springUser.getUser());
+        }else {
             //스프링 시큐리티 적용 폼 로그인
             springUser = (SpringUser) userService.loadUserByUsername(email);
             this.withdrawalFilter(springUser);
+            
+          //암호화되서 온 password와 암호화인 springUser.getPassword()가 암호화되어 있지 않으면 실패 -> 회원가입 시킬 때 비번 암호화 해주어야한다.
             if (!passwordEncoder.matches(password, springUser.getPassword())) {
                 // 로그인 실패 이력 남기기
 //            userService.updateFailedLoginCountPlus(email);
                 throw new BadCredentialsException("비밀번호가 일치하지 않습니다.");
             }
-//        }
+        }
 
+       //인증토큰 객체 리턴
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(email, password, springUser.getAuthorities());
         authenticationToken.setDetails(springUser);
         return authenticationToken;

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 	<header id="header">
 
@@ -39,7 +40,14 @@
                         </div>
                         <a href="contact.html" class="nav-item nav-link">MemberShip</a>
                     </div>
-                    <a href="" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Free Quote</a>
+                    <a href="" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">
+                    	<c:if test="${empty user.email}">
+							<p>로그인된 계정이 없습니다.</p>
+						</c:if>
+						<c:if test="${not empty user.email}">
+							<p>${user.email} 님 로그인 되었습니다.</p>
+						</c:if>
+                    </a>
                 </div>
             </nav>
 	</header>

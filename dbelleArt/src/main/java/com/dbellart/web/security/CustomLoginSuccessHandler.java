@@ -49,7 +49,7 @@ public class CustomLoginSuccessHandler extends SavedRequestAwareAuthenticationSu
 
         RedirectUrlType intRedirectStrategy = decideRedirectStrategy(request, response);
 
-        //user : ¼¼¼Ç °´Ã¼ , ·Î±×ÀÎ À¯ÁöÇØÁÖ´Â °Í,  model.addAttribute("sessionUser",sessionUser); ÇØÁØ°Í°ú °°´Ù, user.~ÇØÁÖ¸é ·Î±×ÀÎÀÌ µÇ¾ú´ÂÁö ¾ÈµÇ¾ú´ÂÁö È®ÀÎ
+        //user : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ , ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½,  model.addAttribute("sessionUser",sessionUser); ï¿½ï¿½ï¿½Ø°Í°ï¿½ ï¿½ï¿½ï¿½ï¿½, user.~ï¿½ï¿½ï¿½Ö¸ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ÈµÇ¾ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
         HttpSession session = request.getSession();
         session.setAttribute("user", ((SpringUser)authentication.getDetails()).getUser());
 
@@ -66,7 +66,7 @@ public class CustomLoginSuccessHandler extends SavedRequestAwareAuthenticationSu
     }
 
     /***
-     * spring security°¡ session¿¡ ÀúÀåÇÑ url À» redirect url·Î »ç¿ë
+     * spring securityï¿½ï¿½ sessionï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ url ï¿½ï¿½ redirect urlï¿½ï¿½ ï¿½ï¿½ï¿½
      * @param request
      * @param response
      * @throws IOException
@@ -78,7 +78,7 @@ public class CustomLoginSuccessHandler extends SavedRequestAwareAuthenticationSu
     }
 
     /***
-     * request referer¿¡ ÀúÀåµÇ¾î ÀÖ´Â url À» redirect url·Î »ç¿ë
+     * request refererï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½Ö´ï¿½ url ï¿½ï¿½ redirect urlï¿½ï¿½ ï¿½ï¿½ï¿½
      * @param request
      * @param response
      * @throws IOException
@@ -89,7 +89,7 @@ public class CustomLoginSuccessHandler extends SavedRequestAwareAuthenticationSu
     }
 
     /***
-     * spring security¿¡ ¼³Á¤µÈ urlÀ» redirect url·Î »ç¿ë
+     * spring securityï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ urlï¿½ï¿½ redirect urlï¿½ï¿½ ï¿½ï¿½ï¿½
      * @param request
      * @param response
      * @throws IOException
@@ -117,7 +117,7 @@ public class CustomLoginSuccessHandler extends SavedRequestAwareAuthenticationSu
     }
 
     /***
-     * ÀÎÁõ ¼º°øÈÄ ¾î¶² typeÀÇ URL·Î recirect ÇÒÁö °áÁ¤
+     * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½î¶² typeï¿½ï¿½ URLï¿½ï¿½ recirect ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
      * @param request
      * @param response
      * @return

@@ -89,18 +89,7 @@ public class UserService implements UserDetailsService {
 		return cnt;
 	}
 
-	// 3. �α���
-//	public boolean loginUserInfo(Member member) {
-//
-//		Member loginSuccess = userMapper.loginUserInfo(member);
-//
-//		if (loginSuccess != null) {
-//
-//			return true;
-//
-//		}
-//		return false;
-//	}
+
 
 	//로그아웃
 	public void logout() {

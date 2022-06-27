@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,7 @@ import com.dbellart.web.domain.UserAuthority;
 public interface UserMapper {
 	
 	//1. 회원가입 insert
-	@Insert("INSERT INTO dbelle.user (name, email, pw, pwCheck, tel, address, checkAll) VALUES (#{name}, #{email}, #{pw}, #{pwCheck}, #{tel}, #{address} , #{checkAll})")
+	@Insert("INSERT INTO dbelle.user (name, email, pw, pwCheck, tel, address, checkAll, kakaoId) VALUES (#{name}, #{email}, #{pw}, #{pwCheck}, #{tel}, #{address} , #{checkAll}, #{kakaoId})")
 	@Options(useGeneratedKeys = true, keyProperty = "userIdx")
 	void addUserinfo(Member user);
 	
@@ -38,6 +39,10 @@ public interface UserMapper {
 	 
 	//5.등록한 권한을 가져온다
     @Select("SELECT * FROM dbelle.authority where user_id = #{asd}")
-    List<UserAuthority> findAuthorityById(@Param("asd") Long ids); //ids=���� asd=������ ��
+    List<UserAuthority> findAuthorityById(@Param("asd") Long ids); 
+    
+    //6. 이메일로 가입한 사람만 있는 경우 카카오아이디 업데이트
+    @Update("update dbelle.user set kakaoId=#{kakaoId} where email=#{email}") 
+    void updateUserByKakao(Member user);
 
 }

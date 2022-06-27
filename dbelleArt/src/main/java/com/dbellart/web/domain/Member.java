@@ -12,6 +12,8 @@ public class Member {
 	private String address;
 	private boolean checkAll;
 	
+	private String kakaoId;
+	
 	public int getUserIdx() {
 		return userIdx;
 	}
@@ -59,6 +61,12 @@ public class Member {
 	}
 	public void setCheckAll(boolean checkAll) {
 		this.checkAll = checkAll;
+	}
+	public String getKakaoId() {
+		return kakaoId;
+	}
+	public void setKakaoId(String kakaoId) {
+		this.kakaoId = kakaoId;
 	}
 	
 	

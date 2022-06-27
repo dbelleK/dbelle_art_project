@@ -1,16 +1,17 @@
 create table user(
 	userIdx int not null AUTO_INCREMENT,
-	name varchar(10) not null,
-	email varchar(50) not null,
-	pw varchar(500) not null,
-	pwCheck varchar(50) not null,
-	tel varchar(50) not null,
-	address varchar(500) not null,
-	checkAll boolean not null,
+	name varchar(10),
+	email varchar(50),
+	pw varchar(500),
+	pwCheck varchar(50),
+	tel varchar(50),
+	address varchar(500),
+	checkAll boolean,
+	kakaoId varchar(50),
 	PRIMARY KEY (userIdx)
 );
 
-select*from user;
+SELECT*FROM user;
 drop table user;
 
 create table authority(
