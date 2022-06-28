@@ -85,12 +85,12 @@
 
 /* ''확인'버튼 */
 .ButtonBasic_solid__KgRqI {
-	background-image: linear-gradient(285deg, #069970, #55c5a1);
+    background-image: linear-gradient(285deg,#b52ee3,#f747b8);
 	color: #fff;
 }
 
 .ButtonBasic_solid__KgRqI:hover {
-	background-image: linear-gradient(285deg, #069970, #55c5a1);
+    background-image: linear-gradient(285deg,#b52ee3,#f747b8);
 	color: #fff;
 }
 </style>

@@ -1,6 +1,51 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<style>
+.col-md-6 {
+	width: 300px;
+	padding: 20px;
+	margin: auto;
+}
+
+a {
+	color: #f36989e6;
+}
+
+a:hover {
+	color: #f36989e6;
+}
+
+.Sns__login {
+	margin-left: 400px;
+	color: #f36989e6;
+}
+
+.find {
+	margin-left: 450px;
+}
+
+.kakaoLogo {
+	border-radius: 50%;
+	background: #f3edb5;
+	padding: 10px;
+}
+
+.kakaoLogo:hover {
+	border: 0.1rem solid #ffe600;
+} 
+
+.naverLogo {
+	border-radius: 50%;
+	background: #77efafb5;
+	padding: 10px;
+}
+ 
+.naverLogo:hover {
+	border: 0.1rem solid #19a764;
+}  
+</style>
+
 <!-- Join Start -->
 <div class="container-xxl py-6">
 	<div class="container">
@@ -19,8 +64,8 @@
 				<form action="/loginPro" method="POST">
 					<input type="hidden" name="${_csrf.parameterName}"
 						value="${_csrf.token}" />
-					<div class="row g-3">
 
+					<div class="row g-3">
 						<div class="col-12">
 							<div class="form-floating">
 								<input type="email" class="form-control" id="email" name="email"
@@ -38,11 +83,11 @@
 						</div>
 
 
-						<div class="col-12">
-							<button class="btn btn-primary w-100 py-3" type="submit">LOGIN</button>
+						<div class="col-md-6">
+							<button class="btn btn-primary w-100 py-3 logins" type="submit">LOGIN</button>
 						</div>
 
-<!-- 						<div>
+						<!-- 						<div>
 							<span style="margin: 0">SNS 간편 로그인</span> <a href="/"
 								onclick="kakaoLogin()">
 								<div>kakao</div>
@@ -50,24 +95,31 @@
 								<div>naver</div>
 							</a>
 						</div> -->
-						
-						
-                <div class="Sns__login">
-                    <span>SNS 간편 로그인</span>
-                    <div type="button" class="Sns__kakao" onclick="kakaoLogin()">kakao
-                        <!-- <img src="/resources/img/kakao-talk.png"/> -->
-                    </div>
-                </div>
 
-						<div>
-							<button class="findPassword1" id="findPassword1" type="button"
-								data-toggle="modal" data-target="#findPasswordModal">아이디찾기</button>
-							<button class="findPassword2" id="findPassword2" type="button"
-								data-toggle="modal" data-target="#findPasswordModal">비밀번호찾기</button>
+
+						<div class="find" style="display: inline;">
+							<a target="_blank" href="" class="find_text">아이디 찾기</a>
+							 | 
+							 <a target="_blank" href="" class="find_text">비밀번호 찾기</a>
 						</div>
 
-						<!-- 비밀번호 찾기 Modal -->
+						<div class="Sns__login" >
+							<div type="button" class="Sns__kakao" onclick="kakaoLogin()" style="display: inline;">
+								SNS 간편 로그인 &nbsp;
+								<img src="https://raw.githubusercontent.com/dbelleK/crud_project/main/src/main/webapp/resources/img/kakao-talk.png" class=kakaoLogo />
+							</div> 
+							&nbsp;&nbsp;
+							<div type="button" class="Sns__naver" onclick="naverLogin()" style="display: inline;">
+								<img src="https://www.codeit.kr/static/images/homepage/naver-login.png" width="50px" height="50px" class=naverLogo />
+							</div>
+						</div>
+						
+						
+
+
 					</div>
+
+
 				</form>
 			</div>
 		</div>

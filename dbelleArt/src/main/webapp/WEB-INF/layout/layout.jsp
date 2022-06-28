@@ -33,7 +33,6 @@
     <!-- Template Stylesheet -->
     <link href="/resources/css/style.css" rel="stylesheet">
     
-    
 </head>
 
 <body>

@@ -3,16 +3,12 @@
 <%@ page session="false" %>
 
 <style>
-.container-xxl.bg-primary.page-header{
-display:none;
+.container-xxl.bg-primary.page-header {
+	display: none;
 }
-
-/* 핑크 */
- .bg-primary {
- background-color: #f36989e6 !important;
-}
-
 </style>
+
+<link href="/resources/css/whole.css" rel="stylesheet">
 
 <!-- <head>
     <meta charset="utf-8">
@@ -93,7 +89,7 @@ display:none;
                         <div class="col-lg-6 text-center text-lg-start">
                             <h1 class="text-white mb-4 animated zoomIn">Who am I?</h1>
                             <p class="text-white pb-3 animated zoomIn">자신에 대해 알고싶으면 ! 지금 바로 "성격유형검사" 를 실행해보세요 !</p>
-                            <a href="" class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">Learn More</a>
+                            <a href="" class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">검사 시작하기</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
                             <img class="img-fluid animated zoomIn" src="/resources/img/hero.png" alt="">
@@ -150,7 +146,7 @@ display:none;
                 <div class="row align-items-center" style="height: 250px;">
                     <div class="col-12 col-md-6">
                         <h3 class="text-white">검사를 완료하셨나요 ?</h3>
-                        <small class="text-white">여러분의 "성격유형검사지" 를 이메일로 보내드립니다 !</small>
+                        <small class="text-white">"로그인" 을 하시면, 여러분의 "성격유형검사지" 를 이메일로 보내드립니다 !</small>
                         <div class="position-relative w-100 mt-3">
                             <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email" style="height: 48px;">
                             <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
@@ -275,12 +271,91 @@ display:none;
         <!-- Service End -->
 
 
-        <!-- Features Start -->
+        <!-- Testimonial Start -->
+        <div class="container-xxl py-6">
+            <div class="container">
+                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Q & A</div>
+                    <h2 class="mb-5">What Our Clients Say!</h2>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="testimonial-item rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="/resources/img/testimonial-1.jpg">
+                            <div class="ps-3">
+                                <h6 class="mb-1">Client Name</h6>
+                                <small>Profession</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="/resources/img/testimonial-2.jpg">
+                            <div class="ps-3">
+                                <h6 class="mb-1">Client Name</h6>
+                                <small>Profession</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="/resources/img/testimonial-3.jpg">
+                            <div class="ps-3">
+                                <h6 class="mb-1">Client Name</h6>
+                                <small>Profession</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="/resources/img/testimonial-4.jpg">
+                            <div class="ps-3">
+                                <h6 class="mb-1">Client Name</h6>
+                                <small>Profession</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+
+ 
+
+
+        <!-- Client Start -->
+        <div class="container-xxl bg-primary my-6 py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="owl-carousel client-carousel">
+                    <a href="#"><img class="img-fluid" src="/resources/img/logo-1.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="/resources/img/logo-2.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="/resources/img/logo-3.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="/resources/img/logo-4.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="/resources/img/logo-5.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="/resources/img/logo-6.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="/resources/img/logo-7.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="/resources/img/logo-8.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <!-- Client End -->
+
+
+
+       <!-- Features Start -->
         <div class="container-xxl py-6">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Features</div>
+                        <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">멤버십</div>
                         <h2 class="mb-4">Why People Choose Us? We Are Trusted & Award Wining Agency</h2>
                         <p>Clita nonumy sanctus nonumy et clita tempor, et sea amet ut et sadipscing rebum amet takimata amet, sed accusam eos eos dolores dolore et. Et ea ea dolor rebum invidunt clita eos. Sea accusam stet stet ipsum, sit ipsum et ipsum kasd</p>
                         <p>Et ea ea dolor rebum invidunt clita eos. Sea accusam stet stet ipsum, sit ipsum et ipsum kasd</p>
@@ -348,82 +423,6 @@ display:none;
             </div>
         </div>
         <!-- Features End -->
-
-
-        <!-- Client Start -->
-        <div class="container-xxl bg-primary my-6 py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container">
-                <div class="owl-carousel client-carousel">
-                    <a href="#"><img class="img-fluid" src="/resources/img/logo-1.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="/resources/img/logo-2.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="/resources/img/logo-3.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="/resources/img/logo-4.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="/resources/img/logo-5.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="/resources/img/logo-6.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="/resources/img/logo-7.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="/resources/img/logo-8.png" alt=""></a>
-                </div>
-            </div>
-        </div>
-        <!-- Client End -->
-
-
-        <!-- Testimonial Start -->
-        <div class="container-xxl py-6">
-            <div class="container">
-                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Q & A</div>
-                    <h2 class="mb-5">What Our Clients Say!</h2>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="/resources/img/testimonial-1.jpg">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="/resources/img/testimonial-2.jpg">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="/resources/img/testimonial-3.jpg">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="/resources/img/testimonial-4.jpg">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
 
 
         <!-- Team Start -->

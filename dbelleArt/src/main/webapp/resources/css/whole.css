@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/* 핑크 */
+ .bg-primary {
+ background-color: #f36989e6 !important;
+}
+
+
+.text-primary {
+   color: #b02ae7 !important;
+}
+
+.sticky-top.navbar .navbar-nav .nav-link:hover, .sticky-top.navbar .navbar-nav .nav-link.active {
+   color: #b02ae7;
+}
+
+:root {
+    --primary: #be66e3;
+    --light: #F3F6F8;
+    --dark: #0E2E50;
+    }
+    
+   .btn-primary {
+    color: #000;
+    background-color: #be66e3;
+    border-color: #be66e3;
+}
+    
+   .btn-primary:hover {
+    color: #000;
+    background-color: #be66e3;
+    border-color: #be66e3;
+}
