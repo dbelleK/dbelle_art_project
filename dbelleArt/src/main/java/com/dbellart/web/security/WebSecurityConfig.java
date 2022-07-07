@@ -47,7 +47,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         //CustomLoginSuccessHandler : �α��� ���� ���� �� ����Ǵ� Ŭ�����̴ϱ�
         //loginPro,login ���� �� �ڵ�ϱ� �ϴ� �� ��ũ�� �����Ѵ�
         CustomLoginSuccessHandler handler = new CustomLoginSuccessHandler();
-        handler.addIgnoreUrl("/loginPro");
+        handler.addIgnoreUrl("/loginProcess");
         handler.addIgnoreUrl("/top/login"); //.successHandler(handler)
                     
         http.addFilterBefore(characterEncodingFilter(), SecurityContextPersistenceFilter.class)
@@ -55,7 +55,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/top/login") // loginPage - �α��� ������ ��� ����
                 .usernameParameter("email") // ���̵� �Ķ���͸� ����
                 .passwordParameter("pw") //�н����� �Ķ���͸� ����
-                .loginProcessingUrl("/loginPro")// loginProcessingUrl - POST�� �α��� ������ ���� �� ��� 
+                .loginProcessingUrl("/loginProcess")// loginProcessingUrl - POST�� �α��� ������ ���� �� ���
 //                .defaultSuccessUrl("/home") // ������ ������ ������
                 .failureHandler(new CustomLoginFailureHandler())
                 .successHandler(handler)
@@ -70,7 +70,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/resources/**").permitAll()
 //                .antMatchers("/sign/**").permitAll()
                 .antMatchers("/joinpPro").permitAll() //path�ּ�, form �±� action
-                .antMatchers("/loginPro").permitAll()
+                .antMatchers("/loginProcess").permitAll()
 //                .antMatchers("/sign/**").hasAnyAuthority("ROLE_USER")
                 .antMatchers("/top/**").hasAnyAuthority("ROLE_USER") //.hasAuthority() or hasAnyAuthority() : Ư�� ������ ������ ����ڸ� ������ �� �ִ�.
 //                .antMatchers("/service/copy/**").hasAnyAuthority("ROLE_USER")

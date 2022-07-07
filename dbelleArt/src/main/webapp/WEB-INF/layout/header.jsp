@@ -67,8 +67,9 @@ $(function() {
                         <a href="contact.html" class="nav-item nav-link">멤버십</a>
                     </div>
                     <a href="/login" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">
+
                     	<c:if test="${empty user.email}">
-							로그인
+							로그인 ${user.email}
 						</c:if>
 						<c:if test="${not empty user.email}">
 							${user.email} 님 로그인 되었습니다.

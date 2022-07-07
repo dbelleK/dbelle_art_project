@@ -38,18 +38,18 @@ public class UserController {
 		return "top/login";
 	}
 
-	@PostMapping("/loginPro")
-	public String loginPro(Member user) {
-
-		SpringUser springUser = (SpringUser) userService.loadUserByUsername(user.getEmail());
-
-		// Todo
-		// 입력한 비밀번호와 셀렉트한 user 정보의 실제 비밀번호를 비교.
-		// 비밀번호가 일치한다면 원하는 페이지로 보내기.
-		// 비밀번호가 다르다면 실패 페이지로 보내기.
-
-		return "top/login";
-	}
+//	@PostMapping("/loginPro")
+//	public String loginPro(Member user) {
+//
+//		SpringUser springUser = (SpringUser) userService.loadUserByUsername(user.getEmail());
+//
+//		// Todo
+//		// 입력한 비밀번호와 셀렉트한 user 정보의 실제 비밀번호를 비교.
+//		// 비밀번호가 일치한다면 원하는 페이지로 보내기.
+//		// 비밀번호가 다르다면 실패 페이지로 보내기.
+//
+//		return "top/login";
+//	}
 	
 
 	

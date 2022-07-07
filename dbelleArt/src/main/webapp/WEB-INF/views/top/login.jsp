@@ -63,7 +63,7 @@ a:hover {
 		</div>
 		<div class="row justify-content-center">
 			<div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s">
-				<form action="/loginPro" method="POST">
+				<form action="/loginProcess" method="POST">
 					<input type="hidden" name="${_csrf.parameterName}"
 						value="${_csrf.token}" />
 

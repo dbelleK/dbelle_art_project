@@ -68,9 +68,4 @@ public class Member {
 	public void setKakaoId(String kakaoId) {
 		this.kakaoId = kakaoId;
 	}
-	
-	
-
-	
-	
 }

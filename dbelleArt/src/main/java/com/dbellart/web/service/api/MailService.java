@@ -18,12 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-@RequiredArgsConstructor
 @Service
 public class MailService {
 
-	@Autowired
-    private JavaMailSender javaMailSender;
+    @Autowired(required = false)
+	private JavaMailSender javaMailSender;
 
     /**
      * 기본적으로 1명에게 보냄

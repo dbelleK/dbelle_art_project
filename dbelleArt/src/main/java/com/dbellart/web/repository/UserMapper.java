@@ -2,11 +2,7 @@ package com.dbellart.web.repository;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -48,6 +44,5 @@ public interface UserMapper {
     //7.
     @Update("update dbelle.user set email=#{email}, pw=#{pw},  tel={tel}, address=#{address} where userIdx=#{userIdx}") 
     void userUpdateInfo(Member member);
-
 
 }

@@ -22,7 +22,7 @@ public class FindPasswordApiController {
     private UserMapper userMapper;
 
     @Autowired
-    private MailService mailService;
+    private  MailService mailService;
 
 
     @PostMapping(value="/email/sendEmailProcess")
