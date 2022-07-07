@@ -44,5 +44,10 @@ public interface UserMapper {
     //6. 이메일로 가입한 사람만 있는 경우 카카오아이디 업데이트
     @Update("update dbelle.user set kakaoId=#{kakaoId} where email=#{email}") 
     void updateUserByKakao(Member user);
+    
+    //7.
+    @Update("update dbelle.user set email=#{email}, pw=#{pw},  tel={tel}, address=#{address} where userIdx=#{userIdx}") 
+    void userUpdateInfo(Member member);
+
 
 }

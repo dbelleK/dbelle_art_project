@@ -29,7 +29,7 @@
 
 .TermsModal__navigatorItem--selected {
 	border-bottom-color: #38c5a4;
-	color: #1dd5a2;
+	color: #f36989e6;
 	font-weight: 500;
 	border-bottom: 0.2rem solid transparent;
 	font-size: 1.4rem;
@@ -39,7 +39,7 @@
 
 .green {
 	border-bottom-color: #38c5a4;
-	color: #1dd5a2;
+	color: #f36989e6;
 	font-weight: 500;
 	border-bottom: 0.2rem solid transparent;
 	font-size: 1.4rem;
@@ -58,7 +58,7 @@
 
 .TermsModal__navigatorItem:focus {
 	/* border-bottom-color: #38c5a4; */
-	color: #1dd5a2;
+	color: #f36989e6;
 	font-weight: 500;
 	border-bottom: 0.2rem solid transparent;
 	font-size: 1.4rem;
@@ -83,12 +83,12 @@ display : block;
 
 /* ''확인'버튼 */
 .ButtonBasic_solid__KgRqI {
-    background-image: linear-gradient(285deg,#b52ee3,#f747b8);
-    color: #fff;
+    background-image: linear-gradient(285deg,#a25df4,#ff599b);
+    color: #000;
 }
 .ButtonBasic_solid__KgRqI:hover {
-   background-image: linear-gradient(285deg,#b52ee3,#f747b8);
-   color: #fff;
+    background-image: linear-gradient(285deg,#a25df4,#ff599b);
+    color: #000;
 }
 
 </style>

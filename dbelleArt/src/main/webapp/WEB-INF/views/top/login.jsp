@@ -19,10 +19,12 @@ a:hover {
 .Sns__login {
 	margin-left: 400px;
 	color: #f36989e6;
+	padding: 15px;
+	margin-top: -10px;
 }
 
 .find {
-	margin-left: 450px;
+	margin-left: 680px;
 }
 
 .kakaoLogo {
@@ -87,22 +89,6 @@ a:hover {
 							<button class="btn btn-primary w-100 py-3 logins" type="submit">LOGIN</button>
 						</div>
 
-						<!-- 						<div>
-							<span style="margin: 0">SNS 간편 로그인</span> <a href="/"
-								onclick="kakaoLogin()">
-								<div>kakao</div>
-							</a> <a href="#" onclick="naverLogin()">
-								<div>naver</div>
-							</a>
-						</div> -->
-
-
-						<div class="find" style="display: inline;">
-							<a target="_blank" href="" class="find_text">아이디 찾기</a>
-							 | 
-							 <a target="_blank" href="" class="find_text">비밀번호 찾기</a>
-						</div>
-
 						<div class="Sns__login" >
 							<div type="button" class="Sns__kakao" onclick="kakaoLogin()" style="display: inline;">
 								SNS 간편 로그인 &nbsp;
@@ -113,21 +99,62 @@ a:hover {
 								<img src="https://www.codeit.kr/static/images/homepage/naver-login.png" width="50px" height="50px" class=naverLogo />
 							</div>
 						</div>
-						
-						
-
-
 					</div>
-
-
 				</form>
 			</div>
 		</div>
+		
+		
+	<div class="find" style="display: inline;">
+		<a data-toggle="modal" href="#findEmail">이메일 찾기</a>
+		 | 
+		 <a data-toggle="modal" href="#findPassword"  id="findPassword2" >비밀번호 찾기</a>
+	</div>
+						
+
+    <!-- Modal -->
+    <div class="modal fade" id="findPasswordModal" tabindex="-1" role="dialog" aria-labelledby="findPasswordModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="Popup__contentWrapper" id="find-password-modal">
+                        <div class="PopupGeneral PopupGeneral__iconPosition--top PopupGeneral__hasTitle ">
+                            <button class="PopupGeneral__closeBtn" data-dismiss="modal">
+                                <i class="fa-solid fa-circle-xmark"></i>
+                            </button>
+                            <div class="PopupGeneral__contents">
+                                <button class="PopupGeneral__contents--iconTop">
+                                    <i class="fa-solid fa-unlock-keyhole"></i>
+                                </button>
+                                <div class="PopupGeneral__contents--title">
+                                    <p>
+                                    <p class="popupChangePW__title">비밀번호 재설정하기</p>
+                                    </p>
+                                </div>
+                                <div class="PopupGeneral__contents--body"><p class="popupChangePW__description">이메일로 비밀번호 재설정 링크를 보내드려요.</p>
+                                    <input id="find-email"autocomplete="off" class="popupChangePW__input" placeholder="가입시 등록한 이메일을 입력해 주세요.">
+                                </div>
+                            </div>
+                            </p>
+
+	                           <div class="PopupGeneral__btns">
+	                               <div class="SignForm__submitBtnWrapper">
+	                                   <span id="vaildEmail"></span>
+	                                   <button type="button" id="sendEmail" class="ButtonGeneral SignForm__submitBtn ButtonGeneral__orange"><span>메일로 보내기</span></button>
+	                              	</div>
+                           	 	</div>
+                        	</div>
+                    	</div>
+               		 </div>
+           		 </div>
+        	</div>
+    	</div>
 	</div>
 </div>
 <!--login End -->
 
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript" src="/resources/js/kakao.js"></script>
+<script type="text/javascript" src="/resources/js/findPassword.js"></script>
 
 
