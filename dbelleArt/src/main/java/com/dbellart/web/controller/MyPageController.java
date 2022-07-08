@@ -15,11 +15,22 @@ public class MyPageController {
 	
     @PostMapping("/mypageInfoPro") 
     public String mypageInfoPro(Member member) {
-      
-    	mypageService.userMyPageCon(member); 
+    	
+    	 mypageService.userMyPageCon(member); 
+    	 
+    	 boolean status = mypageService.userMyPageUpdate(member);
+    	 
+    	 if (status){
+             // 정보 업데이트 성공
+             return "redirect:/";
 
-        return "top/myPage";
+         }else {
+             // 정보 업데이트 실패
+             return "top/myPage";
+         }
+    	 
     }
 
 
 }
+

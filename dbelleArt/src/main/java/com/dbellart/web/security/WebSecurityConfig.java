@@ -60,15 +60,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .and()
                 .authorizeRequests() //authorizeRequests() - ��ť��Ƽ ó���� HttpServletRequest�� �̿��Ѵٴ� ���� �ǹ�,��û�� ���� ������ ������ �� �ִ�.
-//                .antMatchers("/h2-console/*").permitAll()//antMatchers() Ư���� ��θ� ���� //permitAll()�� ��� ����ڰ� ������ �� �ִٴ� ���� �ǹ�
                 .antMatchers("/").permitAll()
                 .antMatchers("/error").permitAll()
+                .antMatchers("/login").permitAll()
                 .antMatchers("/resources/**").permitAll()
-//                .antMatchers("/sign/**").permitAll()
                 .antMatchers("/joinpPro").permitAll() //path�ּ�, form �±� action
                 .antMatchers("/loginProcess").permitAll()
-//                .antMatchers("/sign/**").hasAnyAuthority("ROLE_USER")
-                .antMatchers("/top/**").hasAnyAuthority("ROLE_USER") //.hasAuthority() or hasAnyAuthority() : Ư�� ������ ������ ����ڸ� ������ �� �ִ�.
+                .antMatchers("/kakao/sns/login").permitAll()
+                .antMatchers("/top/**").permitAll()
+                //.antMatchers("/top/**").hasAnyAuthority("ROLE_USER") 
 //                .antMatchers("/service/copy/**").hasAnyAuthority("ROLE_USER")
 
                 .and()

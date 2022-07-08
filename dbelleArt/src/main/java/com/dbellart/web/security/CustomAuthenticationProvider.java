@@ -1,28 +1,23 @@
 package com.dbellart.web.security;
 
 
-import lombok.RequiredArgsConstructor;
+import java.util.Collection;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.dbellart.web.service.UserService;
 import com.dbellart.web.service.api.KakaoApiService;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpSession;
-import java.util.Collection;
-import java.util.List;
 
 @Service
 public class CustomAuthenticationProvider implements AuthenticationProvider {

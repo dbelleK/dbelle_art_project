@@ -7,12 +7,12 @@ import com.dbellart.web.domain.Member;
 
 public interface MypageMapper {
 	
-	//1. È¸¿ø°¡ÀÔÇÑ °Í ¸¶ÀÌÆäÀÌÁö·Î ¿¬°á
+	//1.ë²ˆí˜¸ë¡œ ì •ë³´ ê°€ì ¸ì˜¤ê¸°
 	@Select("select * from dbelle.user where userIdx=#{userIdx}")
 	Member userMyPageCon(Member member);
 	
-	//2. ¸¶ÀÌÆäÀÌÁö ¾÷µ¥ÀÌÆ®
-	@Update("update dbelle.user set email=#{email}, pw=#{pw}, tel={tel}, address=#{address} where userIdx=#{userIdx}")
+	//2. ì •ë³´ìˆ˜ì •
+	@Update("update dbelle.user set email=#{email}, pw=#{pw}, pwCheck=#{pwCheck}, tel={tel}, address=#{address} where userIdx=#{userIdx}")
 	void userMyPageUpdate(Member member);
 
 }

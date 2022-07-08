@@ -36,15 +36,17 @@
 <body>
 
     <!-- header 부분------------------------------------------------------------- -->
-	<tiles:insertAttribute name="header" ignore="true" />
+	<tiles:insertAttribute name="header"/>
 	
 	 <!-- body 부분------------------------------------------------------------- -->
-	<tiles:insertAttribute name="aside" ignore="true" />
-	<tiles:insertAttribute name="body" ignore="true"/>
+	<tiles:insertAttribute name="aside"/>
+	
+	<tiles:insertAttribute name="body"/>
 
         
 	<!-- footer 부분------------------------------------------------------------- -->
-	<tiles:insertAttribute name="footer" ignore="true" />
+	<tiles:insertAttribute name="footer" ignore="true"/>
+<%-- 	<tiles:insertAttribute name="footer" ignore="true" /> --%>
 
 
 <!-- ------------------------------------------------------------------------ -->

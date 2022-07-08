@@ -19,7 +19,9 @@ public class KakaoApiController {
     @ResponseBody
     @PostMapping(value="kakao/sns/login")
     public String responseSuccessLogin(String email, String kakaoId) throws ServletException {
+    	System.out.println("카카오정보1");
     	Member member = kakaoApiService.checkUserByKakao(email, kakaoId);
+    	System.out.println("카카오정보2");
     	return member.getEmail();
 
     }

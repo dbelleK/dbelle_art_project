@@ -68,7 +68,8 @@ function responseSuccessLogin(email, kakaoId) {
              location.href = "/";
         },
         fail: function(error) {
-		 console.log(error)
+		 console.log(error);
+		 console.log(에러);
         },
     })
 }

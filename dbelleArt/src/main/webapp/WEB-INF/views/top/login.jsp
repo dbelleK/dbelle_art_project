@@ -155,6 +155,6 @@ a:hover {
 
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript" src="/resources/js/kakao.js"></script>
-<script type="text/javascript" src="/resources/js/findPassword.js"></script>
+<!-- <script type="text/javascript" src="/resources/js/findPassword.js"></script> -->
 
 
