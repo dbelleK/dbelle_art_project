@@ -20,7 +20,7 @@ public class CustomLoginFailureHandler extends SimpleUrlAuthenticationFailureHan
 
         if (exception instanceof InternalAuthenticationServiceException) {
             getRedirectStrategy().sendRedirect(request, response, "/member/password/resetPasswordStepOne");
-        } else if (exception.getMessage().equals("Ε»Επ")){
+        } else if (exception.getMessage().equals("νƒν‡΄")){
             getRedirectStrategy().sendRedirect(request, response, "/login?&withdrawal=true");
         } else {
             getRedirectStrategy().sendRedirect(request, response, "/login?&error=true");

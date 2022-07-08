@@ -1,19 +1,31 @@
 package com.dbellart.web.domain;
 
+import java.util.Collection;
 
-public class Member {
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+public class Member implements UserDetails {
 	
 	private int userIdx;
+	
 	private String name;
+	
 	private String email;
+	
 	private String pw;
+	
 	private String pwCheck;
+	
 	private String tel;
+	
 	private String address;
+	
 	private boolean checkAll;
 	
 	private String kakaoId;
 	
+
 	public int getUserIdx() {
 		return userIdx;
 	}
@@ -68,4 +80,42 @@ public class Member {
 	public void setKakaoId(String kakaoId) {
 		this.kakaoId = kakaoId;
 	}
+	
+	
+	@Override
+	public String getPassword() {
+		// TODO Auto-generated method stub
+		return pw;
+	}
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return email;
+	}
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

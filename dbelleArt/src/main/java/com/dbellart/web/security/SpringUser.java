@@ -9,20 +9,21 @@ import java.util.List;
 
 public class SpringUser extends User {
 
-    // ³»Àå °´Ã¼ÀÎ UserÀº ¼¼¼ÇÃ³·³ ¼º°øÇÑ °´Ã¼¸¦ ´ã¾ÆµÎ±â À§ÇØ ¼­¹ö³»¿¡¼­ Ç×»ó ºÒ·¯ ¾µ ¼ö ÀÖ°Ô
-    //Users¿¡ UserDetails Æ÷ÇÔ
-    private User users;
+    // ë‚´ì¥ ê°ì²´ì¸ Userì€ ì„¸ì…˜ì²˜ëŸ¼ ì„±ê³µí•œ ê°ì²´ë¥¼ ë‹´ì•„ë‘ê¸° ìœ„í•´ ì„œë²„ë‚´ì—ì„œ í•­ìƒ ë¶ˆëŸ¬ ì“¸ ìˆ˜ ìˆê²Œ
+    //Usersì— UserDetails í¬í•¨
+	
+    private Member users;
 
-    public SpringUser(String email, String pw, List<GrantedAuthority> grantedAuthorities, Member member) {
+    public SpringUser(String email, String pw, List<GrantedAuthority> grantedAuthorities, Member users) {
         super(email, pw, grantedAuthorities);
         this.users = users;
     }
 
-    public User getUser() {
+    public Member getUser() {
         return users;
     }
 
-    public void setUser(User user) {
-        this.users = user;
+    public void setUser(Member member) {
+        this.users = member;
     }
 }

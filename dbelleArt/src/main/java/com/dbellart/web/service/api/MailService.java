@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.dbellart.web.config.MailConfig;
 import com.dbellart.web.domain.Mail;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.mail.MessagingException;
