@@ -81,10 +81,12 @@
     			 if (pwValidCheck.value == ${user.pw}) {
     				// $("#vaildPwCheck").text("비밀번호가 확인되었습니다.").css("color", "green");
     				alert("비밀번호가 확인되었습니다.");
+    				return true;
 
     			} else {
     				$("#vaildPwCheck").text("비밀번호가 틀립니다 다시 입력해주세요.").css("color", "red");
     				alert("비밀번호가 틀립니다 다시 입력해주세요.");
+    				return false;
     			}
     		}
     	}
